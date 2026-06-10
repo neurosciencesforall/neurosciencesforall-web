@@ -7,6 +7,8 @@ import {
 	ArrowRight,
 } from "lucide-react";
 
+import somaImg from "../assets/team/soma-sahai-srivastava.jpeg";
+
 export default function HomePage() {
 	return (
 		<main className="pt-[90px]">
@@ -107,7 +109,7 @@ export default function HomePage() {
 							<video
 								controls
 								preload="metadata"
-								poster="/images/soma-sahai-srivastava.jpeg"
+								poster={somaImg}
 								className="w-full h-full object-cover"
 							>
 								<source
@@ -138,7 +140,7 @@ export default function HomePage() {
 							{/* Attribution */}
 							<div className="flex items-center gap-4 pt-6 border-t border-gray-200">
 								<img
-									src="/images/soma-sahai-srivastava.jpeg"
+									src={somaImg}
 									alt="Dr. Soma Sahai-Srivastava"
 									className="w-14 h-14 rounded-full object-cover border-2 border-gold shadow"
 								/>
