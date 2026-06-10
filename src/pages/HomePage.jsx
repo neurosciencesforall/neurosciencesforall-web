@@ -105,7 +105,7 @@ export default function HomePage() {
 
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 						{/* Video player */}
-						<div className="relative rounded-2xl overflow-hidden shadow-2xl bg-navy aspect-video">
+						{/* <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-navy aspect-video">
 							<video
 								controls
 								preload="metadata"
@@ -118,7 +118,17 @@ export default function HomePage() {
 								/>
 								Your browser does not support the video tag.
 							</video>
-						</div>
+						</div> */}
+
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-navy aspect-video">
+                        <iframe
+                            src="https://www.youtube.com/embed/z4YKQbi9tbI"
+                            title="A Message from Our Founder — NeuroSciences For All"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="w-full h-full"
+                        />
+                        </div>
 
 						{/* Quote + attribution */}
 						<div className="flex flex-col justify-center">
