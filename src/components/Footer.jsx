@@ -87,7 +87,7 @@ export default function Footer() {
           <Link to="#" className="text-white/60 hover:text-white no-underline transition-colors duration-200">
             Terms of Use
           </Link>{" "}
-          | EIN: XX-XXXXXXX
+          | EIN: 42-2302289.
         </p>
       </div>
     </footer>
