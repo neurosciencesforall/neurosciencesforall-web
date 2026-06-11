@@ -233,7 +233,12 @@ export default function HomePage() {
 						title: "Founder & CEO",
 						description:
 							"A leader in EEG care since 2006, Neurotech has spent two decades advancing neurological diagnostics and education. The Neurotech Foundation extends this mission through global health initiatives, bringing specialized neurology education to underserved communities worldwide.",
-						link: "https://link.edgepilot.com/x/jXzguiiK4L5lB3SNZACR-v3V?u=https://welcome.uoc.gr/2026/03/12/management-of-drug-resistant-epilepsy/",
+						initiative: {
+							label: "Featured Initiative",
+							title: "Management of Drug-Resistant Epilepsy",
+							subtitle: "International seminar · In person & online",
+							link: "https://link.edgepilot.com/x/jXzguiiK4L5lB3SNZACR-v3V?u=https://welcome.uoc.gr/2026/03/12/management-of-drug-resistant-epilepsy/",
+						},
 					},
 				];
 				return (
@@ -248,37 +253,54 @@ export default function HomePage() {
 									education and care worldwide.
 								</p>
 							</div>
-							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-								{partners.map(({ org, contact, title, description, link }) => (
+							<div className="flex flex-col gap-6 max-w-4xl mx-auto">
+								{partners.map(({ org, contact, title, description, initiative }) => (
 									<div
 										key={org}
-										className="bg-[#F0F9FF] rounded-2xl p-8 flex flex-col gap-4
-										           hover:-translate-y-1 hover:shadow-lg transition-all duration-300
-										           border border-transparent hover:border-teal/20 max-w-sm w-full"
+										className="bg-[#F0F9FF] rounded-2xl p-8 flex flex-col md:flex-row gap-8
+										           hover:shadow-lg transition-all duration-300
+										           border border-transparent hover:border-teal/20"
 									>
-										<div>
-											<h3 className="font-heading text-navy text-xl font-bold mb-1 leading-snug">
-												{org}
-											</h3>
-											<p className="text-teal text-sm font-semibold">
-												{contact}
-											</p>
-											<p className="text-gray-400 text-xs font-medium mt-0.5">
-												{title}
+										{/* Left — org info */}
+										<div className="flex flex-col gap-3 md:w-1/2">
+											<div>
+												<h3 className="font-heading text-navy text-xl font-bold mb-1 leading-snug">
+													{org}
+												</h3>
+												<p className="text-teal text-sm font-semibold">{contact}</p>
+												<p className="text-gray-400 text-xs font-medium mt-0.5">{title}</p>
+											</div>
+											<p className="text-gray-500 leading-relaxed text-sm">
+												{description}
 											</p>
 										</div>
-										<p className="text-gray-500 leading-relaxed text-sm flex-1">
-											{description}
-										</p>
-										<a
-											href={link}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="inline-flex items-center gap-2 text-teal font-semibold
-											           no-underline hover:gap-3 transition-all duration-200 text-sm"
-										>
-											Learn More <ArrowRight size={16} />
-										</a>
+
+										{/* Divider */}
+										<div className="hidden md:block w-px bg-gray-200 self-stretch" />
+
+										{/* Right — featured initiative */}
+										<div className="md:w-1/2 flex flex-col justify-center">
+											<p className="text-[10px] font-semibold tracking-[0.2em] uppercase
+											              text-teal mb-3">
+												{initiative.label}
+											</p>
+											<div className="bg-white rounded-xl p-5 border border-teal/20 shadow-sm">
+												<h4 className="font-heading text-navy text-base font-bold leading-snug mb-1">
+													{initiative.title}
+												</h4>
+												<p className="text-gray-400 text-xs mb-4">{initiative.subtitle}</p>
+												<a
+													href={initiative.link}
+													target="_blank"
+													rel="noopener noreferrer"
+													className="inline-flex items-center gap-2 bg-navy text-white
+													           text-xs font-semibold px-4 py-2 rounded-full no-underline
+													           hover:bg-teal transition-colors duration-200"
+												>
+													Learn More <ArrowRight size={13} />
+												</a>
+											</div>
+										</div>
 									</div>
 								))}
 							</div>
