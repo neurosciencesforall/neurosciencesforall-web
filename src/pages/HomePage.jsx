@@ -224,53 +224,68 @@ export default function HomePage() {
 				</div>
 			</div>
 
-			{/* Testimonials */}
-			<div className="py-20 bg-white">
-				<div className="max-w-[1400px] mx-auto px-[5%]">
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-						<div>
-							<img
-								src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop"
-								alt="Patient Care"
-								className="w-full rounded-2xl shadow-xl"
-							/>
-						</div>
-						<div>
-							<h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-8">
-								Testimonials
-							</h2>
-							<div className="space-y-8">
-								<div>
-									<p className="text-gray-500 text-lg leading-relaxed mb-3 italic">
-										"As a second-year pre-med student, I struggled to connect
-										textbook neuroscience to real clinical scenarios. The
-										foundation's peer-based learning resources gave me a
-										structured way to work through complex concepts alongside
-										peers who challenged my thinking. It completely changed how
-										I approach problem solving in my coursework."
-									</p>
-									<p className="font-semibold text-teal">
-										— J. M., Undergraduate Neuroscience Student
-									</p>
-								</div>
-								<div>
-									<p className="text-gray-500 text-lg leading-relaxed mb-3 italic">
-										"During my residency, I needed resources that kept pace with
-										the demands of clinical training. The foundation's
-										graduate-level content bridged the gap between what I
-										learned in school and what I was seeing in patients every
-										day. The peer collaboration framework was particularly
-										invaluable during my neurology rotations."
-									</p>
-									<p className="font-semibold text-teal">
-										— Dr. Peter S., Neurology Resident
-									</p>
-								</div>
+			{/* Our Partners */}
+			{(() => {
+				const partners = [
+					{
+						org: "Neurotech, LLC & The Neurotech Foundation",
+						contact: "Keith Morgan MSGH, MBA, R.EEG T.",
+						title: "Founder & CEO",
+						description:
+							"A leader in EEG care since 2006, Neurotech has spent two decades advancing neurological diagnostics and education. The Neurotech Foundation extends this mission through global health initiatives, bringing specialized neurology education to underserved communities worldwide.",
+						link: "https://link.edgepilot.com/x/jXzguiiK4L5lB3SNZACR-v3V?u=https://welcome.uoc.gr/2026/03/12/management-of-drug-resistant-epilepsy/",
+					},
+				];
+				return (
+					<div className="py-20 bg-white">
+						<div className="max-w-[1400px] mx-auto px-[5%]">
+							<div className="text-center mb-14">
+								<h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-4">
+									Our Partners
+								</h2>
+								<p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
+									Organizations we collaborate with to advance neuroscience
+									education and care worldwide.
+								</p>
+							</div>
+							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+								{partners.map(({ org, contact, title, description, link }) => (
+									<div
+										key={org}
+										className="bg-[#F0F9FF] rounded-2xl p-8 flex flex-col gap-4
+										           hover:-translate-y-1 hover:shadow-lg transition-all duration-300
+										           border border-transparent hover:border-teal/20 max-w-sm w-full"
+									>
+										<div>
+											<h3 className="font-heading text-navy text-xl font-bold mb-1 leading-snug">
+												{org}
+											</h3>
+											<p className="text-teal text-sm font-semibold">
+												{contact}
+											</p>
+											<p className="text-gray-400 text-xs font-medium mt-0.5">
+												{title}
+											</p>
+										</div>
+										<p className="text-gray-500 leading-relaxed text-sm flex-1">
+											{description}
+										</p>
+										<a
+											href={link}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="inline-flex items-center gap-2 text-teal font-semibold
+											           no-underline hover:gap-3 transition-all duration-200 text-sm"
+										>
+											Learn More <ArrowRight size={16} />
+										</a>
+									</div>
+								))}
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
+				);
+			})()}
 
 			{/* Newsletter */}
 			<div className="py-20 bg-white">
