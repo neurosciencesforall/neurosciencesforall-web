@@ -7,10 +7,10 @@ import { team } from "../data/team";
 function BioModal({ person, onClose }) {
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/70 backdrop-blur-sm px-0 sm:px-6"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/70 backdrop-blur-sm px-4 sm:px-6"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
-      <div className="bg-white w-full sm:rounded-2xl sm:max-w-2xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
+      <div className="bg-white w-full sm:rounded-2xl sm:max-w-2xl max-w-lg max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
         {/* Top accent bar */}
         <div className="h-1 w-full bg-gradient-to-r from-[#1E3A8A] via-[#0891B2] to-[#F59E0B] shrink-0" />
 
