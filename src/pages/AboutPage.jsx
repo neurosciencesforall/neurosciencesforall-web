@@ -10,7 +10,7 @@ function BioModal({ person, onClose }) {
       className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/70 backdrop-blur-sm px-4 sm:px-6"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
-      <div className="bg-white w-full sm:rounded-2xl sm:max-w-2xl max-w-lg max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
+      <div className="bg-white w-full rounded-2xl max-w-lg sm:max-w-2xl max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
         {/* Top accent bar */}
         <div className="h-1 w-full bg-gradient-to-r from-[#1E3A8A] via-[#0891B2] to-[#F59E0B] shrink-0" />
 
@@ -66,9 +66,8 @@ function BioModal({ person, onClose }) {
 }
 
 // ── Leadership Card (circular, on dark bg) ────────────────
-function LeaderCard({ person, featured = false }) {
+function LeaderCard({ person, featured = false, onBioClick }) {
   const [hovered, setHovered] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
@@ -114,7 +113,7 @@ function LeaderCard({ person, featured = false }) {
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                setModalOpen(true);
+                onBioClick(person);
                 setHovered(false);
               }}
               className="text-[11px] font-semibold text-white border border-white/70
@@ -149,18 +148,13 @@ function LeaderCard({ person, featured = false }) {
           </div>
         </div>
       </div>
-
-      {modalOpen && (
-        <BioModal person={person} onClose={() => setModalOpen(false)} />
-      )}
     </>
   );
 }
 
 // ── Team Member Card (smaller, on frosted card) ───────────
-function TeamCard({ person }) {
+function TeamCard({ person, onBioClick }) {
   const [hovered, setHovered] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
@@ -200,7 +194,7 @@ function TeamCard({ person }) {
             <button
               onClick={(e) => {
                 e.stopPropagation();
-                setModalOpen(true);
+                onBioClick(person);
                 setHovered(false);
               }}
               className="text-[10px] font-semibold text-white border border-white/60
@@ -220,10 +214,6 @@ function TeamCard({ person }) {
           {person.role}
         </p>
       </div>
-
-      {modalOpen && (
-        <BioModal person={person} onClose={() => setModalOpen(false)} />
-      )}
     </>
   );
 }
@@ -233,9 +223,15 @@ export default function AboutPage() {
   const leadership = team.filter((p) => p.tier === "leadership");
   const members = team.filter((p) => p.tier === "team");
   const [featured, ...rest] = leadership;
+  const [selectedPerson, setSelectedPerson] = useState(null);
 
   return (
     <main className="pt-[90px]">
+
+      {/* Single modal — only one can be open at a time */}
+      {selectedPerson && (
+        <BioModal person={selectedPerson} onClose={() => setSelectedPerson(null)} />
+      )}
 
       {/* Vision */}
       <div className="py-20 bg-white">
@@ -321,9 +317,9 @@ export default function AboutPage() {
 
           {/* Leadership row */}
           <div className="flex flex-wrap justify-center items-start gap-x-14 gap-y-12 mb-20 min-h-[310px]">
-            <LeaderCard person={featured} featured={false} />
+            <LeaderCard person={featured} featured={false} onBioClick={setSelectedPerson} />
             {rest.map((person) => (
-              <LeaderCard key={person.name} person={person} />
+              <LeaderCard key={person.name} person={person} onBioClick={setSelectedPerson} />
             ))}
           </div>
 
@@ -345,7 +341,7 @@ export default function AboutPage() {
                            border border-white/[0.08] hover:bg-white/[0.10] 
                            hover:border-white/20 transition-all duration-300"
               >
-                <TeamCard person={person} />
+                <TeamCard person={person} onBioClick={setSelectedPerson} />
               </div>
             ))}
           </div>
