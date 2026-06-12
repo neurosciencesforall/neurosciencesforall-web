@@ -1,6 +1,7 @@
 import somaImg from "../assets/team/soma-sahai-srivastava.jpeg";
 import leighImg from "../assets/team/leigh-ramos-platt.jpeg";
 import jenniferImg from "../assets/team/jennifer_hui.jpeg";
+import belindaImg from "../assets/team/belinda_f.jpeg";
 import placeholderImg from "../assets/team/placeholder.jpg";
 
 // ─── Team Data ────────────────────────────────────────────
@@ -49,9 +50,9 @@ export const team = [
   {
     name: "Belinda Flournoy",
     role: "Chief Financial Officer / Treasurer",
-    shortBio: "Coming soon.",
-    fullBio: "Coming soon.",
-    image: placeholderImg,
+    shortBio: "Founder of STEAM Wonderlabs & Young Innovators",
+    fullBio: "Belinda Flournoy is an educator, advisor, and entrepreneur committed to helping students build confidence, achieve academic success, and develop a lifelong love of learning. She has supported school-age and college-bound students across multiple subjects and is recognized for the outstanding feedback she has received from learners and families for her personalized approach.Beyond education, Belinda is the founder of STEAM Wonderlabs & Young Innovators, a 501(c)(3) nonprofit focused on expanding access to high-quality STEAM learning opportunities for underserved youth. Her experience in education, advocacy, and community leadership strengthens her role as Treasurer and her dedication to advancing meaningful, mission-driven work.",
+    image: belindaImg,
     tier: "leadership",
     // linkedin: "",
   },
