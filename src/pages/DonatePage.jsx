@@ -76,11 +76,21 @@ export default function DonatePage() {
       {/* Hero */}
       <div className="py-20 bg-gradient-to-br from-navy to-teal text-white text-center px-[5%]">
         <h2 className="font-heading text-3xl md:text-5xl font-bold mb-6">Your Gift Transforms Lives</h2>
-        <p className="text-white/95 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+        <p className="text-white/95 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
           Every contribution directly advances innovative neuroscience education — equipping learners
           and professionals worldwide with the cutting-edge tools and resources that drive the future
           of neurological medicine.
         </p>
+        <a
+          href="https://www.zeffy.com/en-US/donation-form/support-neurosciences-for-all"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 bg-white text-navy
+                     px-12 py-4 rounded-full font-semibold no-underline text-lg
+                     hover:bg-gold hover:text-white transition-colors duration-300 shadow-lg"
+        >
+          Donate Now <Heart size={20} />
+        </a>
       </div>
 
       {/* Equipment Fundraising */}
