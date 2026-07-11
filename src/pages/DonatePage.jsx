@@ -150,7 +150,7 @@ export default function DonatePage() {
                 Complete Donation
                 <Heart size={20} />
               </button>
-              <p className="text-center text-gray-400 text-sm">Your donation is tax-deductible. EIN: XX-XXXXXXX</p>
+              <p className="text-center text-gray-400 text-sm">Your donation is tax-deductible. EIN: 42-2302289</p>
             </form>
           </div>
         </div>
