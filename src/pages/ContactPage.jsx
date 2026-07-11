@@ -15,6 +15,24 @@ export default function ContactPage() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Interim fix: opens the visitor's email client with the form fields
+  // pre-filled, since there's no backend contact endpoint yet.
+  // TODO: replace with a real POST /api/contact backend handler.
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const subjectLabels = {
+      general: "General Inquiry",
+      research: "Research Information",
+      donation: "Donation Question",
+      event: "Event Information",
+      volunteer: "Volunteer Opportunities",
+      partnership: "Partnership Inquiry",
+    };
+    const subjectLine = subjectLabels[form.subject] || "Website Contact Form";
+    const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone || "N/A"}\n\nMessage:\n${form.message}`;
+    window.location.href = `mailto:neurosciencesforall@gmail.com?subject=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(body)}`;
+  };
+
   const inputClass = "w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-800 outline-none focus:border-teal transition-colors duration-200 text-base";
 
   return (
@@ -35,7 +53,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
               <h3 className="font-heading text-navy text-xl font-bold mb-6">Send Us a Message</h3>
-              <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
                   <input type="text" name="name" placeholder="Your name" required value={form.name} onChange={handleChange} className={inputClass} />
@@ -91,6 +109,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-heading text-navy text-xl font-bold mb-3">Email Us</h3>
+                  {/* Commented out until @neurosciencesforall.org email hosting is set up
                   <p className="text-gray-500 leading-relaxed">
                     General:{" "}
                     <a href="mailto:info@neurosciencesforall.org" className="text-teal no-underline hover:underline font-medium">
@@ -101,6 +120,19 @@ export default function ContactPage() {
                     Donations:{" "}
                     <a href="mailto:donate@neurosciencesforall.org" className="text-teal no-underline hover:underline font-medium">
                       donate@neurosciencesforall.org
+                    </a>
+                  </p>
+                  */}
+                  <p className="text-gray-500 leading-relaxed">
+                    General:{" "}
+                    <a href="mailto:neurosciencesforall@gmail.com" className="text-teal no-underline hover:underline font-medium">
+                      neurosciencesforall@gmail.com
+                    </a>
+                  </p>
+                  <p className="text-gray-500 leading-relaxed mt-1">
+                    Donations:{" "}
+                    <a href="mailto:neurosciencesforall@gmail.com" className="text-teal no-underline hover:underline font-medium">
+                      neurosciencesforall@gmail.com
                     </a>
                   </p>
                 </div>
