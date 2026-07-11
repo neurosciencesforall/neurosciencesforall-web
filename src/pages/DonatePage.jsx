@@ -3,20 +3,6 @@ import { Link } from "react-router-dom";
 import { Heart, Briefcase, Gift, Users, ArrowRight } from "lucide-react";
 
 export default function DonatePage() {
-  const [form, setForm] = useState({
-    amount: "",
-    type: "",
-    name: "",
-    email: "",
-    inHonor: false,
-    newsletter: false,
-  });
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setForm((prev) => ({ ...prev, [name]: type === "checkbox" ? checked : value }));
-  };
-
   const equipment = [
     {
       icon: (
@@ -85,8 +71,6 @@ export default function DonatePage() {
     { icon: <Users size={40} />, title: "Volunteer", desc: "Donate your time and talents to support our events, programs, and mission", label: "Get Started" },
   ];
 
-  const inputClass = "w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-800 outline-none focus:border-teal transition-colors duration-200 text-base";
-
   return (
     <main className="pt-[90px]">
 
@@ -100,60 +84,30 @@ export default function DonatePage() {
         </p>
       </div>
 
-      {/* Donation Form */}
+      {/* Donation CTA */}
       <div className="py-20 bg-white">
-        <div className="max-w-[600px] mx-auto px-[5%]">
-          <div className="text-center mb-10">
-            <h2 className="font-heading text-navy text-3xl font-bold mb-3">Choose Your Impact</h2>
-            <p className="text-gray-500">Select an amount below or enter a custom donation</p>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
-            <h3 className="font-heading text-navy text-xl font-bold mb-6 text-center">Complete Your Donation</h3>
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Donation Amount</label>
-                <input type="number" name="amount" placeholder="Enter amount" required value={form.amount} onChange={handleChange} className={inputClass} />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Donation Type</label>
-                <select name="type" required value={form.type} onChange={handleChange} className={inputClass}>
-                  <option value="">Select type</option>
-                  <option value="one-time">One-Time Gift</option>
-                  <option value="monthly">Monthly Recurring</option>
-                  <option value="annual">Annual Gift</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
-                <input type="text" name="name" placeholder="Your name" required value={form.name} onChange={handleChange} className={inputClass} />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-                <input type="email" name="email" placeholder="your@email.com" required value={form.email} onChange={handleChange} className={inputClass} />
-              </div>
-              <div className="space-y-3">
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input type="checkbox" name="inHonor" checked={form.inHonor} onChange={handleChange} className="w-4 h-4 accent-teal" />
-                  <span className="text-gray-600 text-sm">Make this donation in honor/memory of someone</span>
-                </label>
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input type="checkbox" name="newsletter" checked={form.newsletter} onChange={handleChange} className="w-4 h-4 accent-teal" />
-                  <span className="text-gray-600 text-sm">Subscribe to our newsletter</span>
-                </label>
-              </div>
-              <button
-                type="submit"
-                onClick={() => window.open('https://www.zeffy.com/en-US/donation-form/support-neurosciences-for-all', '_blank')}
-                className="w-full flex items-center justify-center gap-2 bg-navy text-white py-4 rounded-full font-semibold
-                  hover:bg-teal transition-colors duration-300 cursor-pointer border-none mt-2"
-              >
-                Complete Donation
-                <Heart size={20} />
-              </button>
-              <p className="text-center text-gray-400 text-sm">Your donation is tax-deductible. EIN: 42-2302289</p>
-            </form>
-          </div>
+        <div className="max-w-[600px] mx-auto px-[5%] text-center">
+          <h2 className="font-heading text-navy text-3xl font-bold mb-4">Choose Your Impact</h2>
+          <p className="text-gray-500 text-lg mb-3 leading-relaxed">
+            Select a one-time, monthly, or yearly gift on our secure donation page.
+            Every contribution directly funds neuroscience education and hands-on
+            diagnostic equipment for learners worldwide.
+          </p>
+          <p className="text-gray-400 text-sm mb-10">
+            Donations are processed securely through Zeffy — a 100% free platform
+            for nonprofits, ensuring every dollar goes to our mission.
+            Your contribution is tax-deductible. EIN: 42-2302289
+          </p>
+          <a
+            href="https://www.zeffy.com/en-US/donation-form/support-neurosciences-for-all"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-navy text-white
+                       px-12 py-4 rounded-full font-semibold no-underline text-lg
+                       hover:bg-teal transition-colors duration-300 shadow-lg"
+          >
+            Donate Now <Heart size={20} />
+          </a>
         </div>
       </div>
 
