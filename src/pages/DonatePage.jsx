@@ -144,6 +144,7 @@ export default function DonatePage() {
               </div>
               <button
                 type="submit"
+                onClick={() => window.open('https://www.zeffy.com/en-US/donation-form/support-neurosciences-for-all', '_blank')}
                 className="w-full flex items-center justify-center gap-2 bg-navy text-white py-4 rounded-full font-semibold
                   hover:bg-teal transition-colors duration-300 cursor-pointer border-none mt-2"
               >
