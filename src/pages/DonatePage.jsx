@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Heart, Briefcase, Gift, Users, ArrowRight } from "lucide-react";
 
@@ -84,56 +83,6 @@ export default function DonatePage() {
         </p>
       </div>
 
-      {/* Donation CTA */}
-      <div className="py-20 bg-white">
-        <div className="max-w-[600px] mx-auto px-[5%] text-center">
-          <h2 className="font-heading text-navy text-3xl font-bold mb-4">Choose Your Impact</h2>
-          <p className="text-gray-500 text-lg mb-3 leading-relaxed">
-            Select a one-time, monthly, or yearly gift on our secure donation page.
-            Every contribution directly funds neuroscience education and hands-on
-            diagnostic equipment for learners worldwide.
-          </p>
-          <p className="text-gray-400 text-sm mb-10">
-            Donations are processed securely through Zeffy — a 100% free platform
-            for nonprofits, ensuring every dollar goes to our mission.
-            Your contribution is tax-deductible. EIN: 42-2302289
-          </p>
-          <a
-            href="https://www.zeffy.com/en-US/donation-form/support-neurosciences-for-all"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-navy text-white
-                       px-12 py-4 rounded-full font-semibold no-underline text-lg
-                       hover:bg-teal transition-colors duration-300 shadow-lg"
-          >
-            Donate Now <Heart size={20} />
-          </a>
-        </div>
-      </div>
-
-      {/* Other Ways to Give */}
-      <div className="py-20 bg-[#F0F9FF]">
-        <div className="max-w-[1400px] mx-auto px-[5%]">
-          <div className="text-center mb-14">
-            <h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-4">Other Ways to Support</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {otherWays.map(({ icon, title, desc, label }) => (
-              <div key={title} className="bg-white rounded-2xl p-8 text-center hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                <div className="w-20 h-20 bg-gradient-to-br from-navy to-teal rounded-2xl flex items-center justify-center text-white mx-auto mb-6">
-                  {icon}
-                </div>
-                <h3 className="font-heading text-navy text-xl font-bold mb-3">{title}</h3>
-                <p className="text-gray-500 leading-relaxed mb-4">{desc}</p>
-                <Link to="/contact" className="inline-flex items-center gap-2 text-teal font-semibold no-underline hover:gap-3 transition-all duration-200">
-                  {label} <ArrowRight size={18} />
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Equipment Fundraising */}
       <div className="py-20 bg-white">
         <div className="max-w-[1400px] mx-auto px-[5%]">
@@ -177,20 +126,55 @@ export default function DonatePage() {
               <span className="text-gray-400">0% raised</span>
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* CTA */}
-          <div className="mt-10 text-center">
-            <p className="text-gray-500 text-lg mb-6 max-w-2xl mx-auto">
-              Your generosity directly funds the tools that transform how neuroscience is learned, practiced, and advanced.
-            </p>
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-              className="inline-flex items-center gap-2 bg-navy text-white px-10 py-4 rounded-full font-semibold no-underline
-                hover:bg-teal hover:-translate-y-1 transition-all duration-300 shadow-lg"
-            >
-              Donate Today <Heart size={20} />
-            </a>
+      {/* Donation CTA */}
+      <div className="py-20 bg-[#F0F9FF]">
+        <div className="max-w-[600px] mx-auto px-[5%] text-center">
+          <h2 className="font-heading text-navy text-3xl font-bold mb-4">Choose Your Impact</h2>
+          <p className="text-gray-500 text-lg mb-3 leading-relaxed">
+            Select a one-time, monthly, or yearly gift on our secure donation page.
+            Every contribution directly funds neuroscience education and hands-on
+            diagnostic equipment for learners worldwide.
+          </p>
+          <p className="text-gray-400 text-sm mb-10">
+            Donations are processed securely through Zeffy — a 100% free platform
+            for nonprofits, ensuring every dollar goes to our mission.
+            Your contribution is tax-deductible. EIN: 42-2302289
+          </p>
+          <a
+            href="https://www.zeffy.com/en-US/donation-form/support-neurosciences-for-all"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-navy text-white
+                       px-12 py-4 rounded-full font-semibold no-underline text-lg
+                       hover:bg-teal transition-colors duration-300 shadow-lg"
+          >
+            Donate Now <Heart size={20} />
+          </a>
+        </div>
+      </div>
+
+      {/* Other Ways to Give */}
+      <div className="py-20 bg-white">
+        <div className="max-w-[1400px] mx-auto px-[5%]">
+          <div className="text-center mb-14">
+            <h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-4">Other Ways to Support</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {otherWays.map(({ icon, title, desc, label }) => (
+              <div key={title} className="bg-white rounded-2xl p-8 text-center hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                <div className="w-20 h-20 bg-gradient-to-br from-navy to-teal rounded-2xl flex items-center justify-center text-white mx-auto mb-6">
+                  {icon}
+                </div>
+                <h3 className="font-heading text-navy text-xl font-bold mb-3">{title}</h3>
+                <p className="text-gray-500 leading-relaxed mb-4">{desc}</p>
+                <Link to="/contact" className="inline-flex items-center gap-2 text-teal font-semibold no-underline hover:gap-3 transition-all duration-200">
+                  {label} <ArrowRight size={18} />
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </div>
