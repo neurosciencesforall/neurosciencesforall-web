@@ -81,22 +81,16 @@ export default function DonatePage() {
           and professionals worldwide with the cutting-edge tools and resources that drive the future
           of neurological medicine.
         </p>
-        <div className="relative inline-block group">
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center gap-2 bg-white text-navy
-                       px-12 py-4 rounded-full font-semibold no-underline text-lg
-                       hover:bg-gold hover:text-white transition-colors duration-300 shadow-lg"
-          >
-            Donate Now <Heart size={20} />
-          </Link>
-          <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-3
-                            w-64 rounded-xl bg-navy text-white text-sm text-center px-4 py-3
-                            opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-lg z-10">
-            Online donations opening soon — reach out via Contact to give directly
-            <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-navy" />
-          </span>
-        </div>
+        <a
+          href="https://www.zeffy.com/en-US/donation-form/support-neurosciences-for-all"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 bg-white text-navy
+                     px-12 py-4 rounded-full font-semibold no-underline text-lg
+                     hover:bg-gold hover:text-white transition-colors duration-300 shadow-lg"
+        >
+          Donate Now <Heart size={20} />
+        </a>
       </div>
 
       {/* Equipment Fundraising */}
@@ -155,26 +149,22 @@ export default function DonatePage() {
             diagnostic equipment for learners worldwide.
           </p>
           <p className="text-gray-400 text-sm mb-10">
-            We're finalizing our online giving platform. 501(c)(3) status is pending —
-            reach out via Contact to make a gift directly.
-            EIN: 42-2302289 (tax-exempt status pending)
+            Donations are processed securely through Zeffy — a 100% free platform
+            for nonprofits, ensuring every dollar goes to our mission.
+            Tax-exempt status application filed with the IRS (EIN: 42-2302289) —
+            approval typically takes a few months. Your contribution may be
+            retroactively tax-deductible once approved.
           </p>
-          <div className="relative inline-block group">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-navy text-white
-                         px-12 py-4 rounded-full font-semibold no-underline text-lg
-                         hover:bg-teal transition-colors duration-300 shadow-lg"
-            >
-              Donate Now <Heart size={20} />
-            </Link>
-            <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-3
-                              w-64 rounded-xl bg-navy text-white text-sm text-center px-4 py-3
-                              opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-lg z-10">
-              Online donations opening soon — reach out via Contact to give directly
-              <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-navy" />
-            </span>
-          </div>
+          <a
+            href="https://www.zeffy.com/en-US/donation-form/support-neurosciences-for-all"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-navy text-white
+                       px-12 py-4 rounded-full font-semibold no-underline text-lg
+                       hover:bg-teal transition-colors duration-300 shadow-lg"
+          >
+            Donate Now <Heart size={20} />
+          </a>
         </div>
       </div>
 
