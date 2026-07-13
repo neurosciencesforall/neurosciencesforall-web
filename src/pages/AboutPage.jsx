@@ -251,7 +251,7 @@ export default function AboutPage() {
                 Our Vision
               </h2>
               <p className="font-bold text-gray-800 mb-4">
-                Universal access to neurological care, regardless of geography.
+                Universal access to neuroscience education, regardless of geography.
               </p>
               <p className="text-gray-500 leading-relaxed mb-8">
                 NeuroSciences For All was founded on a simple but powerful belief — that
