@@ -44,7 +44,7 @@ export default function Navbar() {
 				scrolled ? "shadow-lg" : "shadow-sm"
 			}`}
 		>
-			<nav className="flex justify-between items-center px-[5%] py-4 max-w-[1400px] mx-auto">
+			<nav className="flex justify-between items-center px-[5%] py-2 max-w-[1400px] mx-auto">
 				{/* Logo */}
 				<Link
 					to="/"
