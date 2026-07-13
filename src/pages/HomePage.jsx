@@ -80,8 +80,7 @@ export default function HomePage() {
 							</span>
 						</div>
 						<p className="text-gray-500 leading-relaxed max-w-md mx-auto mb-8">
-							Join us for cocktails, dinner, and a program celebrating
-							hands-on neuroscience education.
+                        An evening of cocktails, dinner, and conversation in support of NFA's global neuroscience education programs.
 						</p>
 						<a
 							href={EVENTBRITE_URL}

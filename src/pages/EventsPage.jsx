@@ -64,10 +64,7 @@ export default function EventsPage() {
                 </span>
               </div>
               <p className="text-gray-500 leading-relaxed mb-8">
-                Join us for an evening of cocktails, dinner, and program
-                celebrating hands-on neuroscience education — and help fund
-                the equipment and training that bring it to learners
-                worldwide.
+              Cocktails, dinner, and conversation in support of NFA's global neuroscience education programs. <br />
               </p>
               <a
                 href={EVENTBRITE_URL}
