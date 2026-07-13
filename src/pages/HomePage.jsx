@@ -7,6 +7,7 @@ import {
 	ArrowRight,
 	Clock,
 	MapPin,
+	ChevronDown,
 } from "lucide-react";
 
 import somaImg from "../assets/team/soma-sahai-srivastava.jpeg";
@@ -17,7 +18,7 @@ export default function HomePage() {
 	return (
 		<main className="pt-[90px]">
 			{/* Hero */}
-			<div className="relative h-[90vh] flex items-center justify-center text-center overflow-hidden">
+			<div className="relative h-[65vh] flex items-center justify-center text-center overflow-hidden">
 				<img
 					src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&auto=format&fit=crop"
 					alt="Neural Network"
@@ -50,11 +51,12 @@ export default function HomePage() {
 							<BookOpen size={20} />
 						</Link>
 					</div>
+					<ChevronDown size={24} className="text-white/70 mx-auto mt-10 animate-bounce" />
 				</div>
 			</div>
 
 			{/* Upcoming Fundraiser */}
-			<div className="py-20 bg-[#F0F9FF]">
+			<div className="py-16 bg-[#F0F9FF]">
 				<div className="max-w-[1400px] mx-auto px-[5%] flex justify-center">
 					<div className="bg-white rounded-2xl border border-teal/30 shadow-xl hover:shadow-2xl p-10 md:p-12 max-w-xl w-full text-center hover:scale-[1.02] transition-all duration-300">
 						<div className="flex items-center justify-center gap-3 mb-5">
