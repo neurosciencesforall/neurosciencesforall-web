@@ -5,9 +5,13 @@ import {
 	GraduationCap,
 	Users,
 	ArrowRight,
+	Clock,
+	MapPin,
 } from "lucide-react";
 
 import somaImg from "../assets/team/soma-sahai-srivastava.jpeg";
+
+const EVENTBRITE_URL = "https://www.eventbrite.com/e/neurosciences-for-all-an-evening-of-impact-tickets-1993761877446?aff=oddtdtcreator";
 
 export default function HomePage() {
 	return (
@@ -45,6 +49,47 @@ export default function HomePage() {
 							Find Resources
 							<BookOpen size={20} />
 						</Link>
+					</div>
+				</div>
+			</div>
+
+			{/* Upcoming Fundraiser */}
+			<div className="py-20 bg-[#F0F9FF]">
+				<div className="max-w-[1400px] mx-auto px-[5%] flex justify-center">
+					<div className="bg-white rounded-2xl border border-teal/30 shadow-xl hover:shadow-2xl p-10 md:p-12 max-w-xl w-full text-center hover:scale-[1.02] transition-all duration-300">
+						<div className="flex items-center justify-center gap-3 mb-5">
+							<div className="h-[2px] w-7 bg-teal" />
+							<span className="text-teal text-xs font-semibold uppercase tracking-widest">
+								Upcoming Fundraiser
+							</span>
+							<div className="h-[2px] w-7 bg-teal" />
+						</div>
+						<h2 className="font-heading text-[#C8930A] text-3xl md:text-4xl font-bold mb-4">
+							An Evening of Impact
+						</h2>
+						<div className="flex items-center justify-center gap-6 mb-5 flex-wrap">
+							<span className="flex items-center gap-2 text-slate-800 text-sm font-medium">
+								<Clock size={16} className="text-teal" />
+								August 8, 2026
+							</span>
+							<span className="flex items-center gap-2 text-slate-800 text-sm font-medium">
+								<MapPin size={16} className="text-teal" />
+								DerWolf Pasadena, CA
+							</span>
+						</div>
+						<p className="text-gray-500 leading-relaxed max-w-md mx-auto mb-8">
+							Join us for cocktails, dinner, and a program celebrating
+							hands-on neuroscience education.
+						</p>
+						<a
+							href={EVENTBRITE_URL}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-block bg-navy text-white px-8 py-3 rounded-full font-semibold no-underline
+            hover:scale-105 hover:shadow-lg transition-all duration-300"
+						>
+							Learn More
+						</a>
 					</div>
 				</div>
 			</div>

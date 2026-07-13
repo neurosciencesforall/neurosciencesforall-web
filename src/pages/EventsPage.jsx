@@ -1,4 +1,7 @@
 import { MapPin, Clock } from "lucide-react";
+import bannerImg from "../assets/NFA_Evening_of_Impact_Cover_Banner.png";
+
+const EVENTBRITE_URL = "https://www.eventbrite.com/e/neurosciences-for-all-an-evening-of-impact-tickets-1993761877446?aff=oddtdtcreator";
 
 export default function EventsPage() {
   const events = [
@@ -27,6 +30,58 @@ export default function EventsPage() {
 
   return (
     <main className="pt-[90px]">
+
+      {/* Upcoming Fundraiser — Spotlight */}
+      <div className="py-20 bg-[#F0F9FF]">
+        <div className="max-w-[1400px] mx-auto px-[5%]">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="h-[2px] w-10 bg-teal" />
+            <span className="text-teal text-sm font-semibold uppercase tracking-widest">
+              Upcoming Fundraiser
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div className="rounded-2xl overflow-hidden shadow-md aspect-video">
+              <img
+                src={bannerImg}
+                alt="An Evening of Impact — Neurosciences For All fundraiser gala"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h2 className="font-heading text-[#C8930A] text-3xl font-bold mb-4">
+                An Evening of Impact
+              </h2>
+              <div className="flex flex-col gap-2 mb-6">
+                <span className="flex items-center gap-2 text-gray-500 text-sm">
+                  <Clock size={18} className="text-teal" />
+                  Saturday, August 8, 2026 · 6:00 – 10:00 PM
+                </span>
+                <span className="flex items-center gap-2 text-gray-500 text-sm">
+                  <MapPin size={18} className="text-teal" />
+                  DerWolf Pasadena, 72 N Fair Oaks Ave, Pasadena, CA
+                </span>
+              </div>
+              <p className="text-gray-500 leading-relaxed mb-8">
+                Join us for an evening of cocktails, dinner, and program
+                celebrating hands-on neuroscience education — and help fund
+                the equipment and training that bring it to learners
+                worldwide.
+              </p>
+              <a
+                href={EVENTBRITE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-navy text-white px-8 py-4 rounded-full font-semibold no-underline
+                hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Reserve Your Seat
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Upcoming Events */}
       <div className="py-20 bg-white">

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
-	Brain,
 	Menu,
 	X,
 	LogOut,
@@ -9,6 +8,7 @@ import {
 	UserCircle,
 } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
+import logoIcon from "../assets/nfa_logo_icon.png";
 
 export default function Navbar() {
 	const [scrolled, setScrolled] = useState(false);
@@ -50,9 +50,11 @@ export default function Navbar() {
 					to="/"
 					className="flex items-center gap-3 shrink-0 group transition-transform duration-300 hover:-translate-y-0.5"
 				>
-					<div className="w-[46px] h-[46px] bg-linear-to-br from-navy to-teal rounded-xl flex items-center justify-center text-white">
-						<Brain size={26} />
-					</div>
+					<img
+						src={logoIcon}
+						alt="NeuroSciences For All logo"
+						className="w-14 h-14 object-contain shrink-0"
+					/>
 					{/* Full name — only above 1024px */}
 					<div className="hidden lg:block">
 						<p className="text-[1.2rem] font-bold font-heading text-navy leading-tight m-0 whitespace-nowrap">
