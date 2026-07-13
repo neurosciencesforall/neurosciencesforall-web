@@ -53,7 +53,7 @@ export default function Navbar() {
 					<img
 						src={logoIcon}
 						alt="NeuroSciences For All logo"
-						className="w-14 h-14 object-contain shrink-0"
+						className="w-18 h-18 object-contain shrink-0"
 					/>
 					{/* Full name — only above 1024px */}
 					<div className="hidden lg:block">
@@ -71,12 +71,12 @@ export default function Navbar() {
 				</Link>
 
 				{/* Desktop Nav — only above 1024px */}
-				<ul className="hidden lg:flex items-center list-none m-0 p-0 gap-6 xl:gap-8">
+				<ul className="hidden lg:flex items-center list-none m-0 p-0 gap-5 xl:gap-8">
 					{navLinks.map(({ label, to }) => (
 						<li key={to} className="shrink-0">
 							<Link
 								to={to}
-								className={`relative text-[0.9rem] font-medium no-underline pb-1.5 transition-colors duration-300
+								className={`relative text-[1.1rem] font-medium no-underline pb-1.5 transition-colors duration-300
                   after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-teal
                   after:transition-all after:duration-300
                   ${

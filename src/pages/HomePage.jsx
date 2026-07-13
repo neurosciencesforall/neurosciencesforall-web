@@ -66,7 +66,7 @@ export default function HomePage() {
 							</span>
 							<div className="h-[2px] w-7 bg-teal" />
 						</div>
-						<h2 className="font-heading text-[#C8930A] text-3xl md:text-4xl font-bold mb-4">
+						<h2 className="font-heading text-[#C8930A] text-3xl md:text-3xl font-bold mb-4">
 							An Evening of Impact
 						</h2>
 						<div className="flex items-center justify-center gap-6 mb-5 flex-wrap">
@@ -79,9 +79,8 @@ export default function HomePage() {
 								DerWolf Pasadena, CA
 							</span>
 						</div>
-						<p className="text-gray-500 leading-relaxed max-w-md mx-auto mb-8">
-							Join us for cocktails, dinner, and a program celebrating
-							hands-on neuroscience education.
+						<p className="text-gray-500 leading-relaxed max-w-md mx-auto mb-8 text-xl">
+							Join us for cocktails, dinner, and a program to support neuroscience education in Cambodia.
 						</p>
 						<a
 							href={EVENTBRITE_URL}

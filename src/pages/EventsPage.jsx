@@ -42,7 +42,7 @@ export default function EventsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div className="rounded-2xl overflow-hidden shadow-md aspect-video">
+            <div className="rounded-2xl overflow-hidden shadow-md aspect-2/1">
               <img
                 src={bannerImg}
                 alt="An Evening of Impact — Neurosciences For All fundraiser gala"
@@ -63,8 +63,8 @@ export default function EventsPage() {
                   DerWolf Pasadena, 72 N Fair Oaks Ave, Pasadena, CA
                 </span>
               </div>
-              <p className="text-gray-500 leading-relaxed mb-8">
-              Cocktails, dinner, and conversation in support of NFA's global neuroscience education programs. <br />
+              <p className="text-gray-500 leading-relaxed mb-8 text-xl">
+              Cocktails, dinner, and a program to support neuroscience education in Cambodia. <br />
               </p>
               <a
                 href={EVENTBRITE_URL}
