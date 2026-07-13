@@ -66,10 +66,10 @@ export default function Footer() {
           <ul className="list-none space-y-2">
             <li>
               <a
-                href="mailto:info@neurosciencesforall.org"
+                href="mailto:neurosciencesforall@gmail.com"
                 className="text-white/70 hover:text-white text-sm no-underline transition-colors duration-200"
               >
-                info@neurosciencesforall.org
+                neurosciencesforall@gmail.com
               </a>
             </li>
           </ul>
