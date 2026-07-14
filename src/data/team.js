@@ -2,7 +2,7 @@ import somaImg from "../assets/team/soma-sahai-srivastava.jpeg";
 import leighImg from "../assets/team/leigh-ramos-platt.jpeg";
 import jenniferImg from "../assets/team/jennifer_hui.jpeg";
 import belindaImg from "../assets/team/belinda_f.jpeg";
-import shobhnaImg from "../assets/team/shobhna_sinha.jpg";
+import shobhnaImg from "../assets/team/shobhna_professional_pic.jpg";
 import placeholderImg from "../assets/team/placeholder.jpg";
 
 // ─── Team Data ────────────────────────────────────────────
