@@ -2,6 +2,7 @@ import somaImg from "../assets/team/soma-sahai-srivastava.jpeg";
 import leighImg from "../assets/team/leigh-ramos-platt.jpeg";
 import jenniferImg from "../assets/team/jennifer_hui.jpeg";
 import belindaImg from "../assets/team/belinda_f.jpeg";
+import shobhnaImg from "../assets/team/shobhna_sinha.jpg";
 import placeholderImg from "../assets/team/placeholder.jpg";
 
 // ─── Team Data ────────────────────────────────────────────
@@ -89,6 +90,15 @@ export const team = [
     image: placeholderImg,
     tier: "team",
     // linkedin: "",
+  },
+  {
+    name: "Shobhna Sinha",
+    role: "Technical Lead",
+    shortBio: "Full Stack Developer and AI Educator with a Master's in Computer Engineering from Santa Clara University, building full-stack platforms from concept to deployment.",
+    fullBio: "Shobhna Sinha is a Full Stack Developer and AI Educator with a Master's in Computer Engineering from Santa Clara University. She designed and built the entire NeuroSciences For All platform, from the website itself to the member chat system, event infrastructure, and donation processing. Previously a Senior Web Developer at Unistor Networks, she now splits her time between independent development work and teaching mathematics and computer science to students from elementary through AP level. She brings the same commitment to precision and clarity to both.",
+    image: shobhnaImg,
+    tier: "team",
+    linkedin: "https://www.linkedin.com/in/shobhna-s-5064551b0/",
   },
 
 ];
