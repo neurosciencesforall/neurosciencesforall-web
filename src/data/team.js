@@ -31,7 +31,7 @@ export const team = [
   },
 
   {
-    name: "Leigh Maria Ramos-Platt, MD",
+    name: "Leigh M. Ramos-Platt, MD",
     role: "President",
     // NOTE: Bio sourced from public USC/CHLA profile — confirm with Dr. Ramos-Platt
     shortBio: "Clinical Professor of Neurology and Pediatrics at Keck School of Medicine, USC, and Medical Director of the Muscular Dystrophy Association Neuromuscular Clinic at Children's Hospital Los Angeles.",
@@ -76,7 +76,7 @@ export const team = [
   },
 
   {
-    name: "Fernando Henrique Ibanhes, MD",
+    name: "Fernando H. Ibanhes, MD",
     role: "Director, Global Logistics and Education",
     shortBio: "Neurology resident and future Vascular Neurology Fellow at USC, dedicated to health equity and global capacity building in neurological education.",
     fullBio: "Dr. Fernando Henrique Ibanhes serves as the Director of Global Logistics and Education for Neurosciences for All. He is an Adult Neurology resident at the University of Southern California and Los Angeles General Medical Center, and a future Vascular Neurology Fellow. Driven by a deep commitment to health equity and global capacity building, he earned his MD and a Master of Science in Population Medicine from Brown University. His academic work explores how social determinants of health influence cerebrovascular outcomes and access to care in vulnerable populations. Internationally, Dr. Ibanhes acts as a Visiting Resident Instructor in Cambodia, where he leads neuroanatomy education for medical trainees and internal medicine residents. Recently awarded the USC Dhablania and Kim Family Global Medicine and Health Fellowship, he is dedicated to helping establish the first neurology residency program in Cambodia through accessible and innovative teaching tools.",
