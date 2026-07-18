@@ -2,7 +2,10 @@ import somaImg from "../assets/team/soma-sahai-srivastava.jpeg";
 import leighImg from "../assets/team/leigh-ramos-platt.jpeg";
 import jenniferImg from "../assets/team/jennifer_hui.jpeg";
 import belindaImg from "../assets/team/belinda_f.jpeg";
+import fernandoImg from "../assets/team/fernando_ibanhes.jpg";
+import yaesshnaImg from "../assets/team/yaesshna_pillay.jpg"
 import shobhnaImg from "../assets/team/shobhna_professional_pic.jpg";
+import iraImg from "../assets/team/ira_chaturvedi.jpeg";
 import placeholderImg from "../assets/team/placeholder.jpg";
 
 // ─── Team Data ────────────────────────────────────────────
@@ -67,7 +70,7 @@ export const team = [
     // NOTE: Foundation role/title to be confirmed
     shortBio: "Neurologist and Clinical Neurophysiology Fellow at USC/LA General Medical Center, with training from the University of Texas and University College Dublin.",
     fullBio: "Dr. Yaesshna Pillay is a Neurologist and Clinical Neurophysiology Fellow at the University of Southern California and Los Angeles General Medical Center. She completed her Neurology residency at the University of Texas Health Science Center San Antonio and her medical degree at University College Dublin. Her clinical focus is in neurophysiology, including the diagnosis and assessment of neurological conditions through electrodiagnostic studies.",
-    image: placeholderImg,
+    image: yaesshnaImg,
     tier: "team",
     // linkedin: "",
   },
@@ -77,7 +80,7 @@ export const team = [
     role: "Director, Global Logistics and Education",
     shortBio: "Neurology resident and future Vascular Neurology Fellow at USC, dedicated to health equity and global capacity building in neurological education.",
     fullBio: "Dr. Fernando Henrique Ibanhes serves as the Director of Global Logistics and Education for Neurosciences for All. He is an Adult Neurology resident at the University of Southern California and Los Angeles General Medical Center, and a future Vascular Neurology Fellow. Driven by a deep commitment to health equity and global capacity building, he earned his MD and a Master of Science in Population Medicine from Brown University. His academic work explores how social determinants of health influence cerebrovascular outcomes and access to care in vulnerable populations. Internationally, Dr. Ibanhes acts as a Visiting Resident Instructor in Cambodia, where he leads neuroanatomy education for medical trainees and internal medicine residents. Recently awarded the USC Dhablania and Kim Family Global Medicine and Health Fellowship, he is dedicated to helping establish the first neurology residency program in Cambodia through accessible and innovative teaching tools.",
-    image: placeholderImg,
+    image: fernandoImg,
     tier: "team",
     // linkedin: "",
   },
@@ -87,7 +90,7 @@ export const team = [
     role: "Secretary",
     shortBio: "Medical student at USC Keck School of Medicine with a strong interest in global health and neurological care.",
     fullBio: "Ira Chaturvedi is a medical student at the Keck School of Medicine of the University of Southern California with a strong interest in global health and neurological care. She joined Neurosciences for All to support access to neurological education and contribute to improving global access to neurological care. Ira is committed to advancing health equity through education, collaboration, and service.",
-    image: placeholderImg,
+    image: iraImg,
     tier: "team",
     // linkedin: "",
   },
