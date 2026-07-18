@@ -6,7 +6,7 @@ import fernandoImg from "../assets/team/fernando_ibanhes.jpg";
 import yaesshnaImg from "../assets/team/yaesshna_pillay.jpg"
 import shobhnaImg from "../assets/team/shobhna_professional_pic.jpg";
 import iraImg from "../assets/team/ira_chaturvedi.jpeg";
-import placeholderImg from "../assets/team/placeholder.jpg";
+// import placeholderImg from "../assets/team/placeholder.jpg";
 
 // ─── Team Data ────────────────────────────────────────────
 // tier: "leadership" → larger cards (top row)
