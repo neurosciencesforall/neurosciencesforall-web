@@ -9,36 +9,12 @@ import {
 	MapPin,
 	ChevronDown,
 } from "lucide-react";
-import { useState } from "react";
+
 import somaImg from "../assets/team/soma-sahai-srivastava.jpeg";
 
-const EVENTBRITE_URL =
-	"https://www.eventbrite.com/e/neurosciences-for-all-an-evening-of-impact-tickets-1993761877446?aff=oddtdtcreator";
+const EVENTBRITE_URL = "https://www.eventbrite.com/e/neurosciences-for-all-an-evening-of-impact-tickets-1993761877446?aff=oddtdtcreator";
 
 export default function HomePage() {
-	const [newsletterEmail, setNewsletterEmail] = useState("");
-	const [newsletterStatus, setNewsletterStatus] = useState("idle"); // idle | sending | success | error
-
-	const handleNewsletterSubmit = async (e) => {
-		e.preventDefault();
-		setNewsletterStatus("sending");
-		try {
-			const res = await fetch(
-				"https://chat-server-production-e62d.up.railway.app/api/newsletter",
-				{
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({ email: newsletterEmail }),
-				},
-			);
-			if (!res.ok) throw new Error("Request failed");
-			setNewsletterStatus("success");
-			setNewsletterEmail("");
-		} catch (err) {
-			setNewsletterStatus("error");
-		}
-	};
-
 	return (
 		<main className="pt-[90px]">
 			{/* Hero */}
@@ -75,10 +51,7 @@ export default function HomePage() {
 							<BookOpen size={20} />
 						</Link>
 					</div>
-					<ChevronDown
-						size={24}
-						className="text-white/70 mx-auto mt-10 animate-bounce"
-					/>
+					<ChevronDown size={24} className="text-white/70 mx-auto mt-10 animate-bounce" />
 				</div>
 			</div>
 
@@ -107,8 +80,7 @@ export default function HomePage() {
 							</span>
 						</div>
 						<p className="text-gray-500 leading-relaxed max-w-md mx-auto mb-8 text-xl">
-							Join us for cocktails, dinner, and a program to support
-							neuroscience education in Cambodia.
+							Join us for cocktails, dinner, and a program to support neuroscience education in Cambodia.
 						</p>
 						<a
 							href={EVENTBRITE_URL}
@@ -194,15 +166,15 @@ export default function HomePage() {
 							</video>
 						</div> */}
 
-						<div className="relative rounded-2xl overflow-hidden shadow-2xl bg-navy aspect-video">
-							<iframe
-								src="https://www.youtube.com/embed/z4YKQbi9tbI"
-								title="A Message from Our Founder — NeuroSciences For All"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowFullScreen
-								className="w-full h-full"
-							/>
-						</div>
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-navy aspect-video">
+                        <iframe
+                            src="https://www.youtube.com/embed/z4YKQbi9tbI"
+                            title="A Message from Our Founder — NeuroSciences For All"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="w-full h-full"
+                        />
+                        </div>
 
 						{/* Quote + attribution */}
 						<div className="flex flex-col justify-center">
@@ -328,65 +300,55 @@ export default function HomePage() {
 								</p>
 							</div>
 							<div className="flex flex-col gap-6 max-w-4xl mx-auto">
-								{partners.map(
-									({ org, contact, title, description, initiative }) => (
-										<div
-											key={org}
-											className="bg-[#F0F9FF] rounded-2xl p-8 flex flex-col md:flex-row gap-8
+								{partners.map(({ org, contact, title, description, initiative }) => (
+									<div
+										key={org}
+										className="bg-[#F0F9FF] rounded-2xl p-8 flex flex-col md:flex-row gap-8
 										           hover:shadow-lg transition-all duration-300
 										           border border-transparent hover:border-teal/20"
-										>
-											{/* Left — org info */}
-											<div className="flex flex-col gap-3 md:w-1/2">
-												<div>
-													<h3 className="font-heading text-navy text-xl font-bold mb-1 leading-snug">
-														{org}
-													</h3>
-													<p className="text-teal text-sm font-semibold">
-														{contact}
-													</p>
-													<p className="text-gray-400 text-xs font-medium mt-0.5">
-														{title}
-													</p>
-												</div>
-												<p className="text-gray-500 leading-relaxed text-sm">
-													{description}
-												</p>
+									>
+										{/* Left — org info */}
+										<div className="flex flex-col gap-3 md:w-1/2">
+											<div>
+												<h3 className="font-heading text-navy text-xl font-bold mb-1 leading-snug">
+													{org}
+												</h3>
+												<p className="text-teal text-sm font-semibold">{contact}</p>
+												<p className="text-gray-400 text-xs font-medium mt-0.5">{title}</p>
 											</div>
+											<p className="text-gray-500 leading-relaxed text-sm">
+												{description}
+											</p>
+										</div>
 
-											{/* Divider */}
-											<div className="hidden md:block w-px bg-gray-200 self-stretch" />
+										{/* Divider */}
+										<div className="hidden md:block w-px bg-gray-200 self-stretch" />
 
-											{/* Right — featured initiative */}
-											<div className="md:w-1/2 flex flex-col justify-center">
-												<p
-													className="text-[10px] font-semibold tracking-[0.2em] uppercase
-											              text-teal mb-3"
-												>
-													{initiative.label}
-												</p>
-												<div className="bg-white rounded-xl p-5 border border-teal/20 shadow-sm">
-													<h4 className="font-heading text-navy text-base font-bold leading-snug mb-1">
-														{initiative.title}
-													</h4>
-													<p className="text-gray-400 text-xs mb-4">
-														{initiative.subtitle}
-													</p>
-													<a
-														href={initiative.link}
-														target="_blank"
-														rel="noopener noreferrer"
-														className="inline-flex items-center gap-2 bg-navy text-white
+										{/* Right — featured initiative */}
+										<div className="md:w-1/2 flex flex-col justify-center">
+											<p className="text-[10px] font-semibold tracking-[0.2em] uppercase
+											              text-teal mb-3">
+												{initiative.label}
+											</p>
+											<div className="bg-white rounded-xl p-5 border border-teal/20 shadow-sm">
+												<h4 className="font-heading text-navy text-base font-bold leading-snug mb-1">
+													{initiative.title}
+												</h4>
+												<p className="text-gray-400 text-xs mb-4">{initiative.subtitle}</p>
+												<a
+													href={initiative.link}
+													target="_blank"
+													rel="noopener noreferrer"
+													className="inline-flex items-center gap-2 bg-navy text-white
 													           text-xs font-semibold px-4 py-2 rounded-full no-underline
 													           hover:bg-teal transition-colors duration-200"
-													>
-														Learn More <ArrowRight size={13} />
-													</a>
-												</div>
+												>
+													Learn More <ArrowRight size={13} />
+												</a>
 											</div>
 										</div>
-									),
-								)}
+									</div>
+								))}
 							</div>
 						</div>
 					</div>
@@ -406,40 +368,22 @@ export default function HomePage() {
 						</p>
 						<form
 							className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
-							onSubmit={handleNewsletterSubmit}
+							onSubmit={(e) => e.preventDefault()}
 						>
 							<input
 								type="email"
-								name="newsletterEmail"
 								placeholder="Enter your email address"
 								required
-								value={newsletterEmail}
-								onChange={(e) => setNewsletterEmail(e.target.value)}
-								disabled={newsletterStatus === "sending"}
-								className="flex-1 px-5 py-3 rounded-full text-gray-800 bg-white outline-none border-none text-base shadow-sm focus:ring-2 focus:ring-gold disabled:opacity-50"
+								className="flex-1 px-5 py-3 rounded-full text-gray-800 outline-none border-none text-base"
 							/>
 							<button
 								type="submit"
-								disabled={newsletterStatus === "sending"}
 								className="bg-gold text-white px-8 py-3 rounded-full font-semibold
-      hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 border-none cursor-pointer
-      disabled:opacity-50 disabled:cursor-not-allowed"
+                  hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 border-none cursor-pointer"
 							>
-								{newsletterStatus === "sending"
-									? "Subscribing..."
-									: "Subscribe"}
+								Subscribe
 							</button>
 						</form>
-						{newsletterStatus === "success" && (
-							<p className="text-white text-center mt-4 font-medium">
-								You're subscribed. Thanks for joining us.
-							</p>
-						)}
-						{newsletterStatus === "error" && (
-							<p className="text-white text-center mt-4 font-medium">
-								Something went wrong. Please try again.
-							</p>
-						)}
 					</div>
 				</div>
 			</div>
