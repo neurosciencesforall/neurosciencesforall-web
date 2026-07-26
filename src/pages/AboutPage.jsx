@@ -392,45 +392,60 @@ export default function AboutPage() {
 				</div>
 			</div>
 
-			{/* Core Values */}
-			<div className="py-20 bg-white">
+			{/* Advisor */}
+			<div className="pt-4 pb-20 bg-white">
 				<div className="max-w-[1400px] mx-auto px-[5%]">
-					<div className="text-center mb-14">
-						<h2 className="font-heading text-[#1E3A8A] text-3xl md:text-5xl font-bold mb-4">
-							Our Core Values
+					<div className="max-w-4xl mx-auto text-left mb-6">
+						<h2 className="font-heading text-[#1E3A8A] text-2xl md:text-2xl font-bold">
+							Advisor
 						</h2>
 					</div>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-						{[
-							{
-								icon: <Users size={40} />,
-								title: "Accessibility",
-								desc: "Making neuroscience education and resources available to medical professionals worldwide.",
-							},
-							{
-								icon: <Lightbulb size={40} />,
-								title: "Educational Innovation",
-								desc: "Embracing cutting-edge educational tools and approaches to advance understanding.",
-							},
-						].map(({ icon, title, desc }) => (
+
+					{team
+						.filter((p) => p.tier === "advisor")
+						.map((person) => (
 							<div
-								key={title}
-								className="bg-[#F0F9FF] rounded-2xl p-8 text-center
-                           hover:-translate-y-1 transition-transform duration-300"
+								key={person.name}
+								onClick={() => setSelectedPerson(person)}
+								className="max-w-4xl mx-auto rounded-2xl px-10 py-10
+                     flex flex-col sm:flex-row items-center gap-8
+                     text-center sm:text-left cursor-pointer
+                     hover:-translate-y-1 transition-transform duration-300"
+								style={{ background: "#0f2158" }}
 							>
-								<div
-									className="w-20 h-20 bg-gradient-to-br from-[#1E3A8A] to-[#0891B2]
-                                rounded-2xl flex items-center justify-center text-white mx-auto mb-6"
-								>
-									{icon}
+								<div className="relative w-32 h-32 rounded-full shrink-0 group">
+									<img
+										src={person.image}
+										alt={person.name}
+										className="w-32 h-32 rounded-full object-cover object-top
+                 transition-all duration-500 group-hover:brightness-50"
+										style={{ boxShadow: "0 0 0 3px #C8930A" }}
+									/>
+									<div
+										className="absolute inset-0 rounded-full flex items-center justify-center
+                 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+									>
+										<span
+											className="text-[11px] font-semibold text-white border border-white/70
+                   rounded-full px-3 py-1.5 tracking-wider uppercase"
+										>
+											Full Bio
+										</span>
+									</div>
 								</div>
-								<h3 className="font-heading text-[#1E3A8A] text-xl font-bold mb-3">
-									{title}
-								</h3>
-								<p className="text-gray-500 leading-relaxed">{desc}</p>
+								<div>
+									<h3 className="font-heading text-white text-xl font-bold leading-tight mb-1">
+										{person.name}
+									</h3>
+									<p className="text-[#0891B2] text-sm font-medium mb-3">
+										{person.role}
+									</p>
+									<p className="text-white/65 text-sm leading-relaxed">
+										{person.shortBio}
+									</p>
+								</div>
 							</div>
 						))}
-					</div>
 				</div>
 			</div>
 		</main>

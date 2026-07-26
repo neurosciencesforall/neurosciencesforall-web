@@ -6,6 +6,7 @@ import fernandoImg from "../assets/team/fernando_ibanhes.jpg";
 import yaesshnaImg from "../assets/team/yaesshna_pillay.jpg"
 import shobhnaImg from "../assets/team/shobhna_professional_pic.jpg";
 import iraImg from "../assets/team/ira_chaturvedi.jpeg";
+import kaoSambathImg from "../assets/team/sambath_kao.webp";
 // import placeholderImg from "../assets/team/placeholder.jpg";
 
 // ─── Team Data ────────────────────────────────────────────
@@ -102,6 +103,18 @@ export const team = [
     image: shobhnaImg,
     tier: "team",
     linkedin: "https://www.linkedin.com/in/shobhna-s-5064551b0/",
+  },
+
+  // ── Advisor ────────────────────────────────────────────
+
+  {
+    name: "Dr. KAO Sambath, MD, MSc",
+    role: "Advisor, Cambodia Programs",
+    shortBio: "Chief of Neurology, Mental Health, and Severe Malnutrition at the National Pediatric Hospital in Phnom Penh, with clinical and research focus on pediatric epilepsy and child neurodevelopment.",
+    fullBio: "Dr. KAO Sambath is a Cambodian pediatrician and child neuropsychiatry professional currently serving as Chief of the Neurology, Mental Health, and Severe Malnutrition Department at the National Pediatric Hospital (NPH) in Phnom Penh, a position he has held since 2018. He also serves on the hospital's child protection working group, Cerebral Palsy working group, Antimicrobial Stewardship (AMS) working group, Standard Operating Procedure Working Group on Telemedicine, and Cambodian Hospital Accreditation Standards (CHAS) Assessment Team. He earned his Medical Doctor degree from Thai Binh Medical College and a Master of Science in Pediatric Medicine from Ha Noi Medical University, both in Vietnam. Before his current role, he spent 13 years as Chief of Service at the Center for Child and Adolescent Mental Health (Caritas-CCAMH), a public-private partnership service at Chey Chumneas Referral Hospital in Kandal Province, where he was involved in building center, community, and school-based outreach programs across provinces. His clinical and research interests center on pediatric epilepsy, EEG diagnostics, and child neurodevelopment. He has completed advanced training in pediatric EEG and epilepsy management through programs at institutions including Korean University Anam Hospital, the University of North Carolina's TEACCH program, and Westmead Hospital in Sydney. He is a co-author of peer-reviewed publications on child disability prevalence, digital device exposure and cognition, and serious-game-based screening for developmental delay in Cambodian children, and has presented his work at international conferences across Asia, Europe, and North America.",
+    image: kaoSambathImg,
+    tier: "advisor",
+    // linkedin: "",
   },
 
 ];
