@@ -103,7 +103,7 @@ export default function HomePage() {
 							</span>
 							<span className="flex items-center gap-2 text-slate-800 text-sm font-medium">
 								<MapPin size={16} className="text-teal" />
-								DerWolf Pasadena, CA
+								Lost parrot cafe , 1929 Huntington Dr, South Pasadena, CA  91030
 							</span>
 						</div>
 						<p className="text-gray-500 leading-relaxed max-w-md mx-auto mb-8 text-xl">
