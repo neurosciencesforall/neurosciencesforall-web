@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, Users, Lightbulb, X } from "lucide-react";
 import { team } from "../data/team";
+import aboutTeamImg from "../assets/about-team-cambodia.jpg";
 
 // ── Bio Modal ─────────────────────────────────────────────
 function BioModal({ person, onClose }) {
@@ -304,9 +305,9 @@ export default function AboutPage() {
 						</div>
 						<div>
 							<img
-								src="https://images.unsplash.com/photo-1758691463203-cce9d415b2b5?w=900&auto=format&fit=crop"
-								alt="Research Team"
-								className="w-full rounded-2xl shadow-xl"
+								src={aboutTeamImg}
+								alt="NFA team on a medical mission in Cambodia"
+								className="w-full h-[300px] object-cover rounded-2xl shadow-xl"
 							/>
 						</div>
 					</div>

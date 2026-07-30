@@ -1,164 +1,141 @@
-import { BookOpen, FileText, Calendar, Award, ClipboardCheck, Download, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { GraduationCap, Stethoscope, Activity, Mail, Lock } from "lucide-react";
+import { newsletters } from "../data/newletters";
+
+const categories = [
+	{
+		slug: "students",
+		icon: <GraduationCap size={24} className="text-white" />,
+		title: "Students",
+		desc: "Foundational neuroscience lectures",
+	},
+	{
+		slug: "residents",
+		icon: <Stethoscope size={24} className="text-white" />,
+		title: "Residents",
+		desc: "Clinical case-based lectures",
+	},
+	{
+		slug: "emg",
+		icon: <Activity size={24} className="text-white" />,
+		title: "EMG Resources",
+		desc: "EEG and neurophysiology diagnostics",
+	},
+];
 
 export default function ResourcesPage() {
-  const resourceItems = [
-    {
-      icon: <FileText size={24} className="text-teal" />,
-      title: "Understanding Migraine: A Complete Guide",
-      desc: "Comprehensive resource covering migraine types, triggers, treatment options, and prevention strategies. Includes patient stories and expert insights.",
-      linkLabel: "Download PDF",
-    },
-    {
-      icon: <FileText size={24} className="text-teal" />,
-      title: "Cluster Headache Management",
-      desc: "Evidence-based approaches to managing cluster headaches, including acute treatments, preventive medications, and lifestyle modifications.",
-      linkLabel: "Download PDF",
-    },
-    {
-      icon: <FileText size={24} className="text-teal" />,
-      title: "Brain Health & Aging",
-      desc: "Tips and strategies for maintaining cognitive health throughout life, including nutrition, exercise, mental stimulation, and social engagement.",
-      linkLabel: "Download PDF",
-    },
-    {
-      icon: <Calendar size={24} className="text-teal" />,
-      title: "Headache Diary Template",
-      desc: "Track your headaches effectively with our comprehensive diary template. Monitor frequency, triggers, symptoms, and medication use.",
-      linkLabel: "Download Template",
-    },
-  ];
+	return (
+		<main className="pt-[90px]">
+			<div className="py-20 bg-white">
+				<div className="max-w-[1400px] mx-auto px-[5%]">
+					{/* Header */}
+					<div className="text-center mb-14">
+						<p className="text-gold text-[11px] font-semibold tracking-[0.2em] uppercase mb-3">
+							Resources
+						</p>
+						<h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-4">
+							Lecture Library
+						</h2>
+						<p className="text-gray-500 text-lg max-w-xl mx-auto">
+							Curated video lectures organized by learner level, open to
+							everyone.
+						</p>
+					</div>
 
-  const professionalCards = [
-    {
-      icon: <Award size={40} />,
-      title: "CME Opportunities",
-      desc: "Earn continuing medical education credits through our webinar series and online courses on latest neurological research and treatments.",
-      linkLabel: "View CME Calendar",
-    },
-    {
-      icon: <ClipboardCheck size={40} />,
-      title: "Clinical Guidelines",
-      desc: "Access evidence-based treatment protocols and diagnostic criteria for common neurological conditions.",
-      linkLabel: "Download Guidelines",
-    },
-  ];
+					{/* Category cards */}
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+						{categories.map(({ slug, icon, title, desc }) => (
+							<Link
+								key={slug}
+								to={`/resources/${slug}`}
+								className="bg-[#F0F9FF] rounded-2xl p-8 text-center no-underline
+                           hover:-translate-y-1 transition-transform duration-300"
+							>
+								<div
+									className="w-16 h-16 bg-gradient-to-br from-navy to-teal rounded-2xl
+                                 flex items-center justify-center mx-auto mb-5"
+								>
+									{icon}
+								</div>
+								<h3 className="font-heading text-navy text-xl font-bold mb-2">
+									{title}
+								</h3>
+								<p className="text-gray-500 leading-relaxed mb-5">{desc}</p>
+								<span className="inline-block text-teal font-semibold">
+									Browse lectures
+								</span>
+							</Link>
+						))}
+					</div>
 
-  return (
-    <main className="pt-[90px]">
+					{/* Members-only teaser */}
+					<div
+						className="max-w-3xl mx-auto rounded-2xl overflow-hidden mb-16"
+						style={{ background: "#0f2158" }}
+					>
+						<div className="h-1 w-full bg-gradient-to-r from-[#1E3A8A] via-[#0891B2] to-[#C8930A]" />
+						<div className="px-10 py-10 text-center">
+							<p className="text-white/40 text-[11px] font-semibold tracking-[0.2em] uppercase mb-3">
+								Members Only
+							</p>
+							<h3 className="font-heading text-white text-xl font-bold mb-3">
+								Member-exclusive lectures and case discussions
+							</h3>
+							<p className="text-white/65 mb-6">
+								Sign in or request membership to access additional content.
+							</p>
+							<Link
+								to="/login"
+								className="inline-flex items-center gap-2 bg-[#C8930A] text-white px-8 py-3
+                 rounded-full font-semibold no-underline hover:bg-[#b3830a]
+                 transition-colors duration-200"
+							>
+								<Lock size={18} />
+								Sign in / Request Access
+							</Link>
+						</div>
+					</div>
 
-      {/* Patient Resources */}
-      <div className="py-20 bg-white">
-        <div className="max-w-[1400px] mx-auto px-[5%]">
-          <div className="text-center mb-14">
-            <h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-4">
-              Patient & Professional Resources
-            </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              Evidence-based information and tools to support your neurological health journey
-            </p>
-          </div>
+					{/* Newsletter archive */}
+					<div className="mb-20 max-w-3xl mx-auto">
+						<span className="inline-block bg-[#C8930A] text-white text-base font-semibold tracking-wide uppercase px-4 py-1 rounded-full mb-4">
+							Newsletter Archive
+						</span>
+						<p className="text-gray-500 mb-6">
+							Past issues sent to our subscriber list.
+						</p>
 
-          {/* Educational Materials Card */}
-          <div className="bg-[#F0F9FF] rounded-2xl p-8 text-center mb-14 max-w-sm mx-auto hover:-translate-y-1 transition-transform duration-300">
-            <div className="w-20 h-20 bg-gradient-to-br from-navy to-teal rounded-2xl flex items-center justify-center text-white mx-auto mb-6">
-              <BookOpen size={40} />
-            </div>
-            <h3 className="font-heading text-navy text-xl font-bold mb-3">Educational Materials</h3>
-            <p className="text-gray-500 leading-relaxed">
-              Comprehensive guides on neurological conditions, treatments, and brain health
-            </p>
-          </div>
-
-          {/* Resource Items */}
-          <div>
-            <h2 className="font-heading text-navy text-2xl md:text-3xl font-bold mb-8">
-              Understanding Neurological Conditions
-            </h2>
-            <div className="space-y-6">
-              {resourceItems.map(({ icon, title, desc, linkLabel }) => (
-                <div
-                  key={title}
-                  className="border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow duration-300 bg-white"
-                >
-                  <h3 className="font-heading text-navy text-xl font-bold mb-2 flex items-center gap-3">
-                    {icon}
-                    {title}
-                  </h3>
-                  <p className="text-gray-500 leading-relaxed mb-3">{desc}</p>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 text-teal font-semibold no-underline hover:gap-3 transition-all duration-200"
-                  >
-                    {linkLabel}
-                    <Download size={18} />
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Professional Resources */}
-      <div className="py-20 bg-[#ECFEFF]">
-        <div className="max-w-[1400px] mx-auto px-[5%]">
-          <div className="text-center mb-14">
-            <h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-4">
-              For Healthcare Professionals
-            </h2>
-            <p className="text-gray-500 text-lg">Clinical resources and continuing education opportunities</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {professionalCards.map(({ icon, title, desc, linkLabel }) => (
-              <div
-                key={title}
-                className="bg-white rounded-2xl p-8 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-20 h-20 bg-gradient-to-br from-navy to-teal rounded-2xl flex items-center justify-center text-white mb-6">
-                  {icon}
-                </div>
-                <h3 className="font-heading text-navy text-xl font-bold mb-3">{title}</h3>
-                <p className="text-gray-500 leading-relaxed mb-4">{desc}</p>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-teal font-semibold no-underline hover:gap-3 transition-all duration-200"
-                >
-                  {linkLabel}
-                  <ArrowRight size={18} />
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Student Testimonials */}
-      <div className="py-20 bg-white">
-        <div className="max-w-[1400px] mx-auto px-[5%]">
-          <div className="text-center mb-14">
-            <h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-4">Student Testimonials</h2>
-            <p className="text-gray-500 text-lg">You're not alone in your journey</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1200&auto=format&fit=crop"
-                alt="Support Group"
-                className="w-full rounded-2xl shadow-xl"
-              />
-            </div>
-            <div>
-              <h3 className="font-heading text-navy text-2xl md:text-3xl font-bold mb-6">
-                Connect With Students and Mentors
-              </h3>
-              <p className="text-gray-500 text-lg leading-relaxed">
-                Connect with our global health warriors, advocates, and mentors.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </main>
-  );
+						{newsletters.length === 0 ? (
+							<div className="bg-[#FDF6E7] border border-[#C8930A]/20 rounded-2xl p-8 text-center text-[#8a6607]">
+								Newsletter archive coming soon.
+							</div>
+						) : (
+							<div className="flex flex-col gap-3">
+								{newsletters.map(({ title, date, url }) => (
+									<a
+										key={url}
+										href={url}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="flex items-center justify-between border border-gray-100 rounded-xl px-5 py-4 no-underline hover:shadow-md transition-shadow duration-300 bg-white"
+									>
+										<span className="flex items-center gap-3 text-navy font-medium">
+											<Mail size={18} className="text-teal" />
+											{title}
+										</span>
+										<span className="text-gray-400 text-sm">
+											{new Date(date).toLocaleDateString("en-US", {
+												month: "long",
+												year: "numeric",
+											})}
+										</span>
+									</a>
+								))}
+							</div>
+						)}
+					</div>
+				</div>
+			</div>
+		</main>
+	);
 }

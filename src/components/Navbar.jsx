@@ -31,7 +31,8 @@ export default function Navbar() {
 		{ label: "Home", to: "/" },
 		{ label: "About", to: "/about" },
 		{ label: "Resources", to: "/resources" },
-		{ label: "Events", to: "/events" },
+		{ label: "News & Events", to: "/events" },
+        { label: "Sponsorship", to: "/sponsorship" },
         ...(isAuthenticated ? [{ label: "Community", to: "/community" }] : []),
 		{ label: "Contact", to: "/contact" },
 	];

@@ -10,6 +10,7 @@ import {
 	ChevronDown,
 } from "lucide-react";
 import { useState } from "react";
+import PhotoCarousel from "../components/PhotoCarousel";
 import somaImg from "../assets/team/soma-sahai-srivastava.jpeg";
 
 const EVENTBRITE_URL =
@@ -103,7 +104,7 @@ export default function HomePage() {
 							</span>
 							<span className="flex items-center gap-2 text-slate-800 text-sm font-medium">
 								<MapPin size={16} className="text-teal" />
-								Lost parrot cafe , 1929 Huntington Dr, South Pasadena, CA  91030
+								Lost parrot cafe , 1929 Huntington Dr, South Pasadena, CA 91030
 							</span>
 						</div>
 						<p className="text-gray-500 leading-relaxed max-w-md mx-auto mb-8 text-xl">
@@ -240,61 +241,22 @@ export default function HomePage() {
 				</div>
 			</div>
 
-			{/* Featured Resources */}
+			{/* Our Work */}
 			<div className="py-20 bg-[#ECFEFF]">
 				<div className="max-w-[1400px] mx-auto px-[5%]">
 					<div className="text-center mb-14">
+						<p className="text-gold text-[11px] font-semibold tracking-[0.2em] uppercase mb-3">
+							Our Work
+						</p>
 						<h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-4">
-							Featured Resources
+							In the Field and in the Classroom
 						</h2>
 						<p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
-							Medical students explore basic and clinical neurosciences through
-							a highly interactive curriculum. By prioritizing innovative,
-							peer-based learning, trainees bridge the gap between science and
-							practice together.
+							A look at our team teaching, training, and delivering care in
+							Cambodia and beyond.
 						</p>
 					</div>
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-						{[
-							{
-								img: "https://images.unsplash.com/photo-1738707060236-42d641096f96?w=900&auto=format&fit=crop",
-								alt: "Brain Scan",
-								title: "Foundations",
-								desc: "Undergraduate students explore core neuroscience principles through collaborative peer-based learning, transforming basic science into active problem-solving.",
-							},
-							{
-								img: "https://images.unsplash.com/photo-1758691463110-697a814b2033?w=900&auto=format&fit=crop",
-								alt: "Neural Pathways",
-								title: "Advanced Studies",
-								desc: "Residents and physicians master complex diagnostic reasoning through peer-to-peer case mentorship, specialized clinical training, and evidence-based neuroscience.",
-							},
-							{
-								img: "https://images.unsplash.com/photo-1758691462668-046fd85ceac9?w=900&auto=format&fit=crop",
-								alt: "Data Analysis",
-								title: "Specialized Training",
-								desc: "Empowering providers with targeted training in neurocritical care, stroke, and epilepsy, alongside hands-on mastery of specialized diagnostic tests like EEG and EMG.",
-							},
-						].map(({ img, alt, title, desc }) => (
-							<div
-								key={title}
-								className="bg-white rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-							>
-								<img src={img} alt={alt} className="w-full h-48 object-cover" />
-								<div className="p-6">
-									<h3 className="font-heading text-navy text-xl font-bold mb-3">
-										{title}
-									</h3>
-									<p className="text-gray-500 leading-relaxed mb-4">{desc}</p>
-									<Link
-										to="/resources"
-										className="flex items-center gap-2 text-teal font-semibold no-underline hover:gap-3 transition-all duration-200"
-									>
-										Learn More <ArrowRight size={18} />
-									</Link>
-								</div>
-							</div>
-						))}
-					</div>
+					<PhotoCarousel />
 				</div>
 			</div>
 

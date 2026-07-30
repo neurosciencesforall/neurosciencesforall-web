@@ -11,6 +11,9 @@ import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import CommunityPage from "./pages/CommunityPage";
+import SponsorshipPage from "./pages/SponsorshipPage";
+import LectureCategoryPage from "./pages/LectureCategoryPage";
+import NewsDetailPage from "./pages/NewsDetailPage";
 // import BlogPage from './pages/BlogPage'
 // import BlogPostPage from './pages/BlogPostPage'
 // import VideoPage from './pages/VideoPage'
@@ -28,17 +31,13 @@ function App() {
 				<Route path="/events" element={<EventsPage />} />
 				<Route path="/donate" element={<DonatePage />} />
 				<Route path="/contact" element={<ContactPage />} />
+				<Route path="/resources" element={<ResourcesPage />} />
+                <Route path="/resources/:category" element={<LectureCategoryPage />} />
+                <Route path="/sponsorship" element={<SponsorshipPage />} />
+                <Route path="/news/:slug" element={<NewsDetailPage />} />
 				<Route path="/login" element={<LoginPage />} />
 
 				{/* ── Protected ──────────────────────────────── */}
-				<Route
-					path="/resources"
-					element={
-						<ProtectedRoute>
-							<ResourcesPage />
-						</ProtectedRoute>
-					}
-				/>
 				<Route
 					path="/dashboard"
 					element={
