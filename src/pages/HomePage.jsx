@@ -197,7 +197,7 @@ export default function HomePage() {
 
 						<div className="relative rounded-2xl overflow-hidden shadow-2xl bg-navy aspect-video">
 							<iframe
-								src="https://www.youtube.com/embed/z4YKQbi9tbI"
+								src="https://www.youtube.com/embed/OdQ6BO0EUPc"
 								title="A Message from Our Founder — NeuroSciences For All"
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 								allowFullScreen
