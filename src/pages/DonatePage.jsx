@@ -2,195 +2,298 @@ import { Link } from "react-router-dom";
 import { Heart, Briefcase, Gift, Users, ArrowRight } from "lucide-react";
 
 export default function DonatePage() {
-  const equipment = [
-    {
-      icon: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#185FA5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
-        </svg>
-      ),
-      iconBg: "bg-blue-50",
-      barColor: "bg-blue-500",
-      badgeColor: "bg-blue-50 text-blue-700",
-      title: "Portable EMG",
-      desc: "Clinical-grade electromyography system (e.g., Cadwell, Natus, or similar handheld unit)",
-      cost: "$12,000",
-      badge: "0% of goal",
-    },
-    {
-      icon: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-        </svg>
-      ),
-      iconBg: "bg-emerald-50",
-      barColor: "bg-emerald-500",
-      badgeColor: "bg-emerald-50 text-emerald-700",
-      title: "Portable EEG",
-      desc: "Ambulatory/portable EEG recorder with laptop interface for real-time neural monitoring",
-      cost: "$8,500",
-      badge: "0% of goal",
-    },
-    {
-      icon: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>
-          <line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
-          <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
-        </svg>
-      ),
-      iconBg: "bg-amber-50",
-      barColor: "bg-amber-500",
-      badgeColor: "bg-amber-50 text-amber-700",
-      title: "Digital Ophthalmoscope",
-      desc: "High-resolution digital fundus camera/scope (e.g., Welch Allyn) for ocular examination",
-      cost: "$1,500",
-      badge: "0% of goal",
-    },
-    {
-      icon: (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7280" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="2"/>
-          <path d="M9 9h6M9 13h6M9 17h4"/>
-        </svg>
-      ),
-      iconBg: "bg-gray-100",
-      barColor: "bg-gray-400",
-      badgeColor: "bg-gray-100 text-gray-600",
-      title: "Consumables",
-      desc: "EEG paste, electrodes, EMG needles, alcohol pads, and disposable gloves",
-      cost: "$2,000",
-      badge: "Ongoing supply",
-    },
-  ];
+	const equipment = [
+		{
+			icon: (
+				<svg
+					width="18"
+					height="18"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="#185FA5"
+					strokeWidth="1.8"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				>
+					<path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18" />
+				</svg>
+			),
+			iconBg: "bg-blue-50",
+			barColor: "bg-blue-500",
+			badgeColor: "bg-blue-50 text-blue-700",
+			title: "Portable EMG",
+			desc: "Clinical-grade electromyography system (e.g., Cadwell, Natus, or similar handheld unit)",
+			cost: "$12,000",
+			badge: "0% of goal",
+		},
+		{
+			icon: (
+				<svg
+					width="18"
+					height="18"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="#059669"
+					strokeWidth="1.8"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				>
+					<polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+				</svg>
+			),
+			iconBg: "bg-emerald-50",
+			barColor: "bg-emerald-500",
+			badgeColor: "bg-emerald-50 text-emerald-700",
+			title: "Portable EEG",
+			desc: "Ambulatory/portable EEG recorder with laptop interface for real-time neural monitoring",
+			cost: "$8,500",
+			badge: "0% of goal",
+		},
+		{
+			icon: (
+				<svg
+					width="18"
+					height="18"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="#D97706"
+					strokeWidth="1.8"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				>
+					<circle cx="12" cy="12" r="10" />
+					<circle cx="12" cy="12" r="3" />
+					<line x1="12" y1="2" x2="12" y2="5" />
+					<line x1="12" y1="19" x2="12" y2="22" />
+					<line x1="2" y1="12" x2="5" y2="12" />
+					<line x1="19" y1="12" x2="22" y2="12" />
+				</svg>
+			),
+			iconBg: "bg-amber-50",
+			barColor: "bg-amber-500",
+			badgeColor: "bg-amber-50 text-amber-700",
+			title: "Digital Ophthalmoscope",
+			desc: "High-resolution digital fundus camera/scope (e.g., Welch Allyn) for ocular examination",
+			cost: "$1,500",
+			badge: "0% of goal",
+		},
+		{
+			icon: (
+				<svg
+					width="18"
+					height="18"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="#6B7280"
+					strokeWidth="1.8"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				>
+					<rect x="3" y="3" width="18" height="18" rx="2" />
+					<path d="M9 9h6M9 13h6M9 17h4" />
+				</svg>
+			),
+			iconBg: "bg-gray-100",
+			barColor: "bg-gray-400",
+			badgeColor: "bg-gray-100 text-gray-600",
+			title: "Consumables",
+			desc: "EEG paste, electrodes, EMG needles, alcohol pads, and disposable gloves",
+			cost: "$2,000",
+			badge: "Ongoing supply",
+		},
+	];
 
-  const otherWays = [
-    { icon: <Briefcase size={40} />, title: "Corporate Partnerships", desc: "Partner with us to advance neuroscience while demonstrating your commitment to community health", label: "Learn More" },
-    { icon: <Gift size={40} />, title: "Planned Giving", desc: "Create a lasting legacy through bequests, trusts, and other estate planning options", label: "Learn More" },
-    { icon: <Users size={40} />, title: "Volunteer", desc: "Donate your time and talents to support our events, programs, and mission", label: "Get Started" },
-  ];
+	const otherWays = [
+		{
+			icon: <Briefcase size={40} />,
+			title: "Corporate Partnerships",
+			desc: "Partner with us to advance neuroscience while demonstrating your commitment to community health",
+			label: "Learn More",
+		},
+		{
+			icon: <Gift size={40} />,
+			title: "Planned Giving",
+			desc: "Create a lasting legacy through bequests, trusts, and other estate planning options",
+			label: "Learn More",
+		},
+		{
+			icon: <Users size={40} />,
+			title: "Volunteer",
+			desc: "Donate your time and talents to support our events, programs, and mission",
+			label: "Get Started",
+		},
+	];
 
-  return (
-    <main className="pt-[90px]">
-
-      {/* Hero */}
-      <div className="py-20 bg-gradient-to-br from-navy to-teal text-white text-center px-[5%]">
-        <h2 className="font-heading text-3xl md:text-5xl font-bold mb-6">Your Gift Transforms Lives</h2>
-        <p className="text-white/95 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
-          Every contribution directly advances innovative neuroscience education — equipping learners
-          and professionals worldwide with the cutting-edge tools and resources that drive the future
-          of neurological medicine.
-        </p>
-        <a
-          href="https://www.zeffy.com/en-US/donation-form/support-neurosciences-for-all"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 bg-white text-navy
+	return (
+		<main className="pt-[90px]">
+			{/* Hero */}
+			<div className="py-20 bg-gradient-to-br from-navy to-teal text-white text-center px-[5%]">
+				<h2 className="font-heading text-3xl md:text-5xl font-bold mb-6">
+					Your Gift Transforms Lives
+				</h2>
+				<p className="text-white/95 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
+					Every contribution directly advances innovative neuroscience education
+					— equipping learners and professionals worldwide with the cutting-edge
+					tools and resources that drive the future of neurological medicine.
+				</p>
+				<a
+					href="https://www.zeffy.com/en-US/donation-form/support-neurosciences-for-all"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="inline-flex items-center justify-center gap-2 bg-white text-navy
                      px-12 py-4 rounded-full font-semibold no-underline text-lg
                      hover:bg-gold hover:text-white transition-colors duration-300 shadow-lg"
-        >
-          Donate Now <Heart size={20} />
-        </a>
-      </div>
+				>
+					Donate Now <Heart size={20} />
+				</a>
+			</div>
 
-      {/* Equipment Fundraising */}
-      <div className="py-20 bg-white">
-        <div className="max-w-[1400px] mx-auto px-[5%]">
-          <div className="text-center mb-4">
-            <p className="text-teal font-semibold uppercase tracking-widest text-sm mb-2">Fundraising Priorities</p>
-            <h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-4">Medical Equipment</h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              Program expense funding supports the acquisition of essential hands-on diagnostic tools,
-              grounding our curriculum in authentic neurological education.
-            </p>
-          </div>
+			{/* Equipment Fundraising */}
+			<div className="py-20 bg-white">
+				<div className="max-w-[1400px] mx-auto px-[5%]">
+					<div className="text-center mb-4">
+						<p className="text-teal font-semibold uppercase tracking-widest text-sm mb-2">
+							Fundraising Priorities
+						</p>
+						<h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-4">
+							Medical Equipment
+						</h2>
+						<p className="text-gray-500 text-lg max-w-2xl mx-auto">
+							Program expense funding supports the acquisition of essential
+							hands-on diagnostic tools, grounding our curriculum in authentic
+							neurological education.
+						</p>
+					</div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {equipment.map(({ icon, iconBg, barColor, badgeColor, title, desc, cost, badge }) => (
-              <div key={title} className="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow duration-300">
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`w-10 h-10 ${iconBg} rounded-xl flex items-center justify-center`}>{icon}</div>
-                  <span className="font-bold text-navy text-lg">{cost}</span>
-                </div>
-                <h3 className="font-heading text-navy text-lg font-bold mb-2">{title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">{desc}</p>
-                <div className="w-full bg-gray-100 rounded-full h-2 mb-2">
-                  <div className={`${barColor} h-2 rounded-full`} style={{ width: "3%" }} />
-                </div>
-                <span className={`text-xs font-semibold px-3 py-1 rounded-full ${badgeColor}`}>{badge}</span>
-              </div>
-            ))}
-          </div>
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+						{equipment.map(
+							({
+								icon,
+								iconBg,
+								barColor,
+								badgeColor,
+								title,
+								desc,
+								cost,
+								badge,
+							}) => (
+								<div
+									key={title}
+									className="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow duration-300"
+								>
+									<div className="flex items-center justify-between mb-4">
+										<div
+											className={`w-10 h-10 ${iconBg} rounded-xl flex items-center justify-center`}
+										>
+											{icon}
+										</div>
+										<span className="font-bold text-navy text-lg">{cost}</span>
+									</div>
+									<h3 className="font-heading text-navy text-lg font-bold mb-2">
+										{title}
+									</h3>
+									<p className="text-gray-500 text-sm leading-relaxed mb-4">
+										{desc}
+									</p>
+									<div className="w-full bg-gray-100 rounded-full h-2 mb-2">
+										<div
+											className={`${barColor} h-2 rounded-full`}
+											style={{ width: "3%" }}
+										/>
+									</div>
+									<span
+										className={`text-xs font-semibold px-3 py-1 rounded-full ${badgeColor}`}
+									>
+										{badge}
+									</span>
+								</div>
+							),
+						)}
+					</div>
 
-          {/* Subtotal */}
-          <div className="mt-10 bg-[#F0F9FF] rounded-2xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div>
-              <p className="text-gray-500 text-sm font-semibold uppercase tracking-wide mb-1">Subtotal — Medical Equipment</p>
-              <p className="font-heading text-navy text-3xl font-bold">$24,000</p>
-            </div>
-            <div className="flex flex-wrap items-center gap-4 text-gray-500 text-sm">
-              <span>4 items</span>
-              <span className="w-px h-4 bg-gray-300" />
-              <span>Program funding priority</span>
-              <span className="w-px h-4 bg-gray-300" />
-              <span className="text-gray-400">0% raised</span>
-            </div>
-          </div>
-        </div>
-      </div>
+					{/* Subtotal */}
+					<div className="mt-10 bg-[#F0F9FF] rounded-2xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+						<div>
+							<p className="text-gray-500 text-sm font-semibold uppercase tracking-wide mb-1">
+								Subtotal — Medical Equipment
+							</p>
+							<p className="font-heading text-navy text-3xl font-bold">
+								$24,000
+							</p>
+						</div>
+						<div className="flex flex-wrap items-center gap-4 text-gray-500 text-sm">
+							<span>4 items</span>
+							<span className="w-px h-4 bg-gray-300" />
+							<span>Program funding priority</span>
+							<span className="w-px h-4 bg-gray-300" />
+							<span className="text-gray-400">0% raised</span>
+						</div>
+					</div>
+				</div>
+			</div>
 
-      {/* Donation CTA */}
-      <div className="py-20 bg-[#F0F9FF]">
-        <div className="max-w-[600px] mx-auto px-[5%] text-center">
-          <h2 className="font-heading text-navy text-3xl font-bold mb-4">Choose Your Impact</h2>
-          <p className="text-gray-500 text-lg mb-3 leading-relaxed">
-            Select a one-time, monthly, or yearly gift on our secure donation page.
-            Every contribution directly funds neuroscience education and hands-on
-            diagnostic equipment for learners worldwide.
-          </p>
-          <p className="text-gray-400 text-sm mb-10">
-            Donations are processed securely through Zeffy — a 100% free platform
-            for nonprofits, ensuring every dollar goes to our mission.
-            Tax-exempt status application filed with the IRS (EIN: 42-2302289) —
-            approval typically takes a few months. Your contribution may be
-            retroactively tax-deductible once approved.
-          </p>
-          <a
-            href="https://www.zeffy.com/en-US/donation-form/support-neurosciences-for-all"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-navy text-white
+			{/* Donation CTA */}
+			<div className="py-20 bg-[#F0F9FF]">
+				<div className="max-w-[600px] mx-auto px-[5%] text-center">
+					<h2 className="font-heading text-navy text-3xl font-bold mb-4">
+						Choose Your Impact
+					</h2>
+					<p className="text-gray-500 text-lg mb-3 leading-relaxed">
+						Select a one-time, monthly, or yearly gift on our secure donation
+						page. Every contribution directly funds neuroscience education and
+						hands-on diagnostic equipment for learners worldwide.
+					</p>
+					<p className="text-gray-400 text-sm mb-10">
+						Donations are processed securely through Zeffy — a 100% free
+						platform for nonprofits, ensuring every dollar goes to our mission.
+						NeuroSciences For All is a registered 501(c)(3) nonprofit (EIN:
+						42-2302289) and your contribution is tax deductible.
+					</p>
+					<a
+						href="https://www.zeffy.com/en-US/donation-form/support-neurosciences-for-all"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="inline-flex items-center justify-center gap-2 bg-navy text-white
                        px-12 py-4 rounded-full font-semibold no-underline text-lg
                        hover:bg-teal transition-colors duration-300 shadow-lg"
-          >
-            Donate Now <Heart size={20} />
-          </a>
-        </div>
-      </div>
+					>
+						Donate Now <Heart size={20} />
+					</a>
+				</div>
+			</div>
 
-      {/* Other Ways to Give */}
-      <div className="py-20 bg-white">
-        <div className="max-w-[1400px] mx-auto px-[5%]">
-          <div className="text-center mb-14">
-            <h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-4">Other Ways to Support</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {otherWays.map(({ icon, title, desc, label }) => (
-              <div key={title} className="bg-white rounded-2xl p-8 text-center hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-                <div className="w-20 h-20 bg-gradient-to-br from-navy to-teal rounded-2xl flex items-center justify-center text-white mx-auto mb-6">
-                  {icon}
-                </div>
-                <h3 className="font-heading text-navy text-xl font-bold mb-3">{title}</h3>
-                <p className="text-gray-500 leading-relaxed mb-4">{desc}</p>
-                <Link to="/contact" className="inline-flex items-center gap-2 text-teal font-semibold no-underline hover:gap-3 transition-all duration-200">
-                  {label} <ArrowRight size={18} />
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-    </main>
-  );
+			{/* Other Ways to Give */}
+			<div className="py-20 bg-white">
+				<div className="max-w-[1400px] mx-auto px-[5%]">
+					<div className="text-center mb-14">
+						<h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-4">
+							Other Ways to Support
+						</h2>
+					</div>
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+						{otherWays.map(({ icon, title, desc, label }) => (
+							<div
+								key={title}
+								className="bg-white rounded-2xl p-8 text-center hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+							>
+								<div className="w-20 h-20 bg-gradient-to-br from-navy to-teal rounded-2xl flex items-center justify-center text-white mx-auto mb-6">
+									{icon}
+								</div>
+								<h3 className="font-heading text-navy text-xl font-bold mb-3">
+									{title}
+								</h3>
+								<p className="text-gray-500 leading-relaxed mb-4">{desc}</p>
+								<Link
+									to="/contact"
+									className="inline-flex items-center gap-2 text-teal font-semibold no-underline hover:gap-3 transition-all duration-200"
+								>
+									{label} <ArrowRight size={18} />
+								</Link>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</main>
+	);
 }
