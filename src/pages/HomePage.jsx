@@ -12,6 +12,7 @@ import {
 import { useState } from "react";
 import PhotoCarousel from "../components/PhotoCarousel";
 import somaImg from "../assets/team/soma-sahai-srivastava.jpeg";
+import heroImg from "../assets/hero/workshop-hero.jpeg";
 
 const EVENTBRITE_URL =
 	"https://www.eventbrite.com/e/neurosciences-for-all-an-evening-of-impact-tickets-1993761877446?aff=oddtdtcreator";
@@ -45,8 +46,8 @@ export default function HomePage() {
 			{/* Hero */}
 			<div className="relative min-h-[65vh] flex items-center justify-center text-center overflow-hidden">
 				<img
-					src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&auto=format&fit=crop"
-					alt="Neural Network"
+					src={heroImg}
+					alt="NFA neuroanatomy workshop with students"
 					className="absolute inset-0 w-full h-full object-cover"
 				/>
 				<div className="absolute inset-0 bg-navy/70" />
