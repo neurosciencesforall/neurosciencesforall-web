@@ -8,6 +8,7 @@ import {
 	Clock,
 	MapPin,
 	ChevronDown,
+    Image as ImageIcon,
 } from "lucide-react";
 import { useState } from "react";
 import PhotoCarousel from "../components/PhotoCarousel";
@@ -69,12 +70,12 @@ export default function HomePage() {
 							<Heart size={20} />
 						</Link>
 						<Link
-							to="/resources"
+							to="/gallery"
 							className="flex items-center justify-center gap-2 bg-white/10 border-2 border-white text-white px-8 py-4 rounded-full font-semibold no-underline
-                hover:bg-white hover:text-navy transition-all duration-300"
+    hover:bg-white hover:text-navy transition-all duration-300"
 						>
-							Find Resources
-							<BookOpen size={20} />
+							View Gallery
+							<ImageIcon size={20} />
 						</Link>
 					</div>
 					<ChevronDown

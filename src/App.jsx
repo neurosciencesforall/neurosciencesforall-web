@@ -14,6 +14,7 @@ import CommunityPage from "./pages/CommunityPage";
 import SponsorshipPage from "./pages/SponsorshipPage";
 import LectureCategoryPage from "./pages/LectureCategoryPage";
 import NewsDetailPage from "./pages/NewsDetailPage";
+import GalleryPage from "./pages/GalleryPage";
 // import BlogPage from './pages/BlogPage'
 // import BlogPostPage from './pages/BlogPostPage'
 // import VideoPage from './pages/VideoPage'
@@ -32,6 +33,7 @@ function App() {
 				<Route path="/donate" element={<DonatePage />} />
 				<Route path="/contact" element={<ContactPage />} />
 				<Route path="/resources" element={<ResourcesPage />} />
+                <Route path="/gallery" element={<GalleryPage />} />
                 <Route path="/resources/:category" element={<LectureCategoryPage />} />
                 <Route path="/sponsorship" element={<SponsorshipPage />} />
                 <Route path="/news/:slug" element={<NewsDetailPage />} />
