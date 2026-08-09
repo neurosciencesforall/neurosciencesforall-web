@@ -254,7 +254,7 @@ export default function AboutPage() {
 	const [selectedPerson, setSelectedPerson] = useState(null);
 
 	return (
-		<main className="pt-[126px]">
+		<main className="pt-[90px]">
 			{/* Single modal — only one can be open at a time */}
 			{selectedPerson && (
 				<BioModal
@@ -393,62 +393,64 @@ export default function AboutPage() {
 				</div>
 			</div>
 
-			{/* Advisor */}
+			{/* Advisory Board */}
 			<div className="pt-4 pb-20 bg-white relative overflow-hidden">
 				{/* Faint dot grid texture, echoes Leadership section above */}
 				<div className="max-w-[1400px] mx-auto px-[5%] relative">
 					<div className="max-w-4xl mx-auto text-left mb-6">
 						<h2 className="font-heading text-[#1E3A8A] text-2xl md:text-2xl font-bold">
-							Advisor
+							Advisory Board
 						</h2>
 					</div>
 
-					{team
-						.filter((p) => p.tier === "advisor")
-						.map((person) => (
-							<div
-								key={person.name}
-								onClick={() => setSelectedPerson(person)}
-								className="max-w-4xl mx-auto rounded-2xl overflow-hidden
+					<div className="max-w-4xl mx-auto flex flex-col gap-6">
+						{team
+							.filter((p) => p.tier === "advisor")
+							.map((person) => (
+								<div
+									key={person.name}
+									onClick={() => setSelectedPerson(person)}
+									className="rounded-2xl overflow-hidden
              cursor-pointer hover:-translate-y-1 transition-transform duration-300"
-								style={{ background: "#0f2158" }}
-							>
-								<div className="h-1 w-full bg-gradient-to-r from-[#1E3A8A] via-[#0891B2] to-[#C8930A]" />
-								<div className="px-10 py-10 flex flex-col sm:flex-row items-center gap-8 text-center sm:text-left">
-									<div className="relative w-32 h-32 rounded-full shrink-0 group">
-										<img
-											src={person.image}
-											alt={person.name}
-											className="w-32 h-32 rounded-full object-cover object-top
+									style={{ background: "#0f2158" }}
+								>
+									<div className="h-1 w-full bg-gradient-to-r from-[#1E3A8A] via-[#0891B2] to-[#C8930A]" />
+									<div className="px-10 py-10 flex flex-col sm:flex-row items-center gap-8 text-center sm:text-left">
+										<div className="relative w-32 h-32 rounded-full shrink-0 group">
+											<img
+												src={person.image}
+												alt={person.name}
+												className="w-32 h-32 rounded-full object-cover object-top
                  transition-all duration-500 group-hover:brightness-50"
-											style={{ boxShadow: "0 0 0 3px #C8930A" }}
-										/>
-										<div
-											className="absolute inset-0 rounded-full flex items-center justify-center
+												style={{ boxShadow: "0 0 0 3px #C8930A" }}
+											/>
+											<div
+												className="absolute inset-0 rounded-full flex items-center justify-center
                  opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-										>
-											<span
-												className="text-[11px] font-semibold text-white border border-white/70
-                   rounded-full px-3 py-1.5 tracking-wider uppercase"
 											>
-												Full Bio
-											</span>
+												<span
+													className="text-[11px] font-semibold text-white border border-white/70
+                   rounded-full px-3 py-1.5 tracking-wider uppercase"
+												>
+													Full Bio
+												</span>
+											</div>
+										</div>
+										<div>
+											<h3 className="font-heading text-white text-xl font-bold leading-tight mb-1">
+												{person.name}
+											</h3>
+											<p className="text-[#0891B2] text-sm font-medium mb-3">
+												{person.role}
+											</p>
+											<p className="text-white/65 text-sm leading-relaxed">
+												{person.shortBio}
+											</p>
 										</div>
 									</div>
-									<div>
-										<h3 className="font-heading text-white text-xl font-bold leading-tight mb-1">
-											{person.name}
-										</h3>
-										<p className="text-[#0891B2] text-sm font-medium mb-3">
-											{person.role}
-										</p>
-										<p className="text-white/65 text-sm leading-relaxed">
-											{person.shortBio}
-										</p>
-									</div>
 								</div>
-							</div>
-						))}
+							))}
+					</div>
 				</div>
 			</div>
 		</main>

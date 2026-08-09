@@ -7,6 +7,7 @@ import yaesshnaImg from "../assets/team/yaesshna_pillay.jpg"
 import shobhnaImg from "../assets/team/shobhna_professional_pic.jpg";
 import iraImg from "../assets/team/ira_chaturvedi.jpeg";
 import kaoSambathImg from "../assets/team/sambath_kao.webp";
+import chumNavuthImg from "../assets/team/chum_navuth.png";
 // import placeholderImg from "../assets/team/placeholder.jpg";
 
 // ─── Team Data ────────────────────────────────────────────
@@ -105,7 +106,7 @@ export const team = [
     linkedin: "https://www.linkedin.com/in/shobhna-s-5064551b0/",
   },
 
-  // ── Advisor ────────────────────────────────────────────
+  // ── Advisory Board ─────────────────────────────────────
 
   {
     name: "Dr. KAO Sambath, MD, MSc",
@@ -113,6 +114,16 @@ export const team = [
     shortBio: "Chief of Neurology, Mental Health, and Severe Malnutrition at the National Pediatric Hospital in Phnom Penh, with clinical and research focus on pediatric epilepsy and child neurodevelopment.",
     fullBio: "Dr. KAO Sambath is a Cambodian pediatrician and child neuropsychiatry professional currently serving as Chief of the Neurology, Mental Health, and Severe Malnutrition Department at the National Pediatric Hospital (NPH) in Phnom Penh, a position he has held since 2018. He also serves on the hospital's child protection working group, Cerebral Palsy working group, Antimicrobial Stewardship (AMS) working group, Standard Operating Procedure Working Group on Telemedicine, and Cambodian Hospital Accreditation Standards (CHAS) Assessment Team. He earned his Medical Doctor degree from Thai Binh Medical College and a Master of Science in Pediatric Medicine from Ha Noi Medical University, both in Vietnam. Before his current role, he spent 13 years as Chief of Service at the Center for Child and Adolescent Mental Health (Caritas-CCAMH), a public-private partnership service at Chey Chumneas Referral Hospital in Kandal Province, where he was involved in building center, community, and school-based outreach programs across provinces. His clinical and research interests center on pediatric epilepsy, EEG diagnostics, and child neurodevelopment. He has completed advanced training in pediatric EEG and epilepsy management through programs at institutions including Korean University Anam Hospital, the University of North Carolina's TEACCH program, and Westmead Hospital in Sydney. He is a co-author of peer-reviewed publications on child disability prevalence, digital device exposure and cognition, and serious-game-based screening for developmental delay in Cambodian children, and has presented his work at international conferences across Asia, Europe, and North America.",
     image: kaoSambathImg,
+    tier: "advisor",
+    // linkedin: "",
+  },
+
+  {
+    name: "Prof. Dr. CHUM NAVUTH, MD",
+    role: "Advisor, Cambodia Programs",
+    shortBio: "Professor of Medicine and Neurology and Senior Consultant Neurologist in Phnom Penh, and former Head of the Department of Neurology at Khmer-Soviet Friendship Hospital.",
+    fullBio: "Prof. Dr. Chum Navuth is a distinguished Cambodian clinician-academic, Professor of Medicine and Neurology, and former Head of the Department of Neurology at Khmer-Soviet Friendship Hospital (KSFH) in Phnom Penh. He currently serves as Professor of Medicine and Neurology at the University of Health Sciences (UHS) and Senior Consultant Neurologist at KSFH, and holds national representative and advisory board roles with the ASEAN Neurological Association (ASNA) General Council and the Asian Stroke Advisory Panel (ASAP). He earned his Doctor of Medicine from the University of Health Sciences in Cambodia, completed specialist training in Internal Medicine and Neurology through a partnership with University Hospital Dupuytren in Limoges, France, and holds a Diploma in Medical Pedagogy from Université Paris VII. His clinical expertise spans stroke and neurovascular care, neurocritical emergencies, epilepsy, movement disorders, and neurodegenerative and cognitive disorders, and he spearheaded Stroke Unit development and multidisciplinary stroke networks at KSFH. As lead designer of Cambodia's Competency-Based Neurology Residency Curriculum, he has shaped medical education nationally, directing Emergency Neurological Life Support (ENLS) training and supervising doctoral and postgraduate research. He is a major contributor to the Cambodian Clinical Practice Guidelines for Medicine, including the 2025 Epilepsy Management Guidelines, and a co-author of national acute stroke protocols. His research has appeared in journals including Neurology: Education, the Journal of Neural Transmission, and The Lancet Regional Health – Western Pacific, addressing neurology training, movement disorders, and community-based epilepsy care across Southeast Asia.",
+    image: chumNavuthImg,
     tier: "advisor",
     // linkedin: "",
   },
