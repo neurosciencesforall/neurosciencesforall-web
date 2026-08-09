@@ -14,9 +14,7 @@ import { useState } from "react";
 import PhotoCarousel from "../components/PhotoCarousel";
 import somaImg from "../assets/team/soma-sahai-srivastava.jpeg";
 import heroImg from "../assets/hero/workshop-hero.jpeg";
-
-const EVENTBRITE_URL =
-	"https://www.eventbrite.com/e/neurosciences-for-all-an-evening-of-impact-tickets-1993761877446?aff=oddtdtcreator";
+import eventRecapPhoto from "../assets/events/evening-of-impact-3.jpg";
 
 export default function HomePage() {
 	const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -43,7 +41,7 @@ export default function HomePage() {
 	};
 
 	return (
-		<main className="pt-[126px]">
+		<main className="pt-[122px]">
 			{/* Hero */}
 			<div className="relative min-h-[65vh] flex items-center justify-center text-center overflow-hidden">
 				<img
@@ -85,43 +83,39 @@ export default function HomePage() {
 				</div>
 			</div>
 
-			{/* Upcoming Fundraiser */}
-			<div className="py-20 bg-[#F0F9FF]">
+			{/* Event Recap */}
+			<div className="py-8 bg-[#F0F9FF]">
 				<div className="max-w-[1400px] mx-auto px-[5%] flex justify-center">
-					<div className="bg-white rounded-2xl border border-teal/30 shadow-xl hover:shadow-2xl p-10 md:p-12 max-w-xl w-full text-center hover:scale-[1.02] transition-all duration-300">
-						<div className="flex items-center justify-center gap-3 mb-5">
-							<div className="h-[2px] w-7 bg-teal" />
-							<span className="text-teal text-xs font-semibold uppercase tracking-widest">
-								Upcoming Fundraiser
-							</span>
-							<div className="h-[2px] w-7 bg-teal" />
+					<div className="bg-white rounded-2xl border border-teal/30 shadow-xl hover:shadow-2xl overflow-hidden max-w-3xl w-full grid grid-cols-1 sm:grid-cols-2 hover:scale-[1.01] transition-all duration-300">
+						<img
+							src={eventRecapPhoto}
+							alt="Guests at An Evening of Impact"
+							className="w-full h-40 sm:h-full sm:max-h-56 object-cover"
+						/>
+						<div className="p-6 sm:p-7 text-center sm:text-left">
+							<div className="flex items-center justify-center sm:justify-start gap-3 mb-3">
+								<div className="h-[2px] w-7 bg-teal" />
+								<span className="text-teal text-xs font-semibold uppercase tracking-widest">
+									Past Event
+								</span>
+							</div>
+							<h2 className="font-heading text-[#C8930A] text-xl md:text-2xl font-bold mb-3">
+								An Evening of Impact
+							</h2>
+							<p className="text-gray-500 leading-relaxed mb-5 text-sm">
+								Thank you to everyone who joined us for a night of strong
+								turnout, robust fundraising, and a shared commitment to
+								neuroscience education in Cambodia. A grand success made
+								possible by this community.
+							</p>
+							<Link
+								to="/events"
+								className="inline-block bg-navy text-white px-6 py-2.5 rounded-full font-semibold no-underline text-sm
+              hover:scale-105 hover:shadow-lg transition-all duration-300"
+							>
+								See the Recap
+							</Link>
 						</div>
-						<h2 className="font-heading text-[#C8930A] text-3xl md:text-3xl font-bold mb-4">
-							An Evening of Impact
-						</h2>
-						<div className="flex items-center justify-center gap-6 mb-5 flex-wrap">
-							<span className="flex items-center gap-2 text-slate-800 text-sm font-medium">
-								<Clock size={16} className="text-teal" />
-								August 8, 2026
-							</span>
-							<span className="flex items-center gap-2 text-slate-800 text-sm font-medium">
-								<MapPin size={16} className="text-teal" />
-								Lost parrot cafe , 1929 Huntington Dr, South Pasadena, CA 91030
-							</span>
-						</div>
-						<p className="text-gray-500 leading-relaxed max-w-md mx-auto mb-8 text-xl">
-							Join us for cocktails, dinner, and a program to support
-							neuroscience education in Cambodia.
-						</p>
-						<a
-							href={EVENTBRITE_URL}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="inline-block bg-navy text-white px-8 py-3 rounded-full font-semibold no-underline
-            hover:scale-105 hover:shadow-lg transition-all duration-300"
-						>
-							Learn More
-						</a>
 					</div>
 				</div>
 			</div>

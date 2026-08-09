@@ -1,10 +1,11 @@
-import { MapPin, Clock } from "lucide-react";
+import { MapPin, Clock, Image as ImageIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { news } from "../data/news";
-import bannerImg from "../assets/NFA_Evening_of_Impact_Cover_Banner.png";
-
-const EVENTBRITE_URL =
-	"https://www.eventbrite.com/e/neurosciences-for-all-an-evening-of-impact-tickets-1993761877446?aff=oddtdtcreator";
+import eventPhoto1 from "../assets/events/evening-of-impact-1.jpg";
+import eventPhoto2 from "../assets/events/evening-of-impact-2.jpg";
+import eventPhoto3 from "../assets/events/evening-of-impact-3.jpg";
+import eventPhoto4 from "../assets/events/evening-of-impact-4.jpeg";
+import workshopPhoto from "../assets/gallery/IMG_5565.jpeg";
 
 export default function EventsPage() {
 	const events = [
@@ -32,23 +33,38 @@ export default function EventsPage() {
 	];
 
 	return (
-		<main className="pt-[126px]">
-			{/* Upcoming Fundraiser — Spotlight */}
-			<div className="py-20 bg-[#F0F9FF]">
+		<main className="pt-[90px]">
+			{/* Past Events */}
+			<div className="py-12 bg-[#F0F9FF]">
 				<div className="max-w-[1400px] mx-auto px-[5%]">
-					<div className="flex items-center gap-3 mb-8">
+					<div className="flex items-center gap-3 mb-6">
 						<div className="h-[2px] w-10 bg-teal" />
 						<span className="text-teal text-sm font-semibold uppercase tracking-widest">
-							Upcoming Fundraiser
+							Past Events
 						</span>
 					</div>
 
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-						<div className="rounded-2xl overflow-hidden shadow-md aspect-2/1">
+						<div className="grid grid-cols-2 gap-2 rounded-2xl overflow-hidden max-w-md mx-auto md:mx-0">
 							<img
-								src={bannerImg}
-								alt="An Evening of Impact — Neurosciences For All fundraiser gala"
-								className="w-full h-full object-cover"
+								src={eventPhoto1}
+								alt="Guests connecting at An Evening of Impact"
+								className="w-full h-32 sm:h-40 object-cover rounded-xl"
+							/>
+							<img
+								src={eventPhoto2}
+								alt="Guests at An Evening of Impact"
+								className="w-full h-32 sm:h-40 object-cover rounded-xl"
+							/>
+							<img
+								src={eventPhoto3}
+								alt="NFA team at An Evening of Impact"
+								className="w-full h-32 sm:h-40 object-cover rounded-xl"
+							/>
+							<img
+								src={eventPhoto4}
+								alt="An Evening of Impact program"
+								className="w-full h-32 sm:h-40 object-cover rounded-xl"
 							/>
 						</div>
 						<div>
@@ -62,29 +78,24 @@ export default function EventsPage() {
 								</span>
 								<span className="flex items-center gap-2 text-gray-500 text-sm">
 									<MapPin size={18} className="text-teal" />
-									Lost parrot cafe , 1929 Huntington Dr, South Pasadena, CA
+									Lost Parrot Cafe, 1929 Huntington Dr, South Pasadena, CA
 									91030
 								</span>
 							</div>
 							<p className="text-gray-500 leading-relaxed mb-8 text-xl">
-								Cocktails, dinner, and a program to support neuroscience
-								education in Cambodia. <br />
+								A wonderful night of connection and generosity in support of
+								neuroscience education in Cambodia. With strong turnout and
+								robust fundraising, the evening was a resounding success, and
+								we're deeply grateful to everyone who joined us, supported the
+								mission, and helped make it possible.
 							</p>
-							<a
-								href={EVENTBRITE_URL}
-								target="_blank"
-								rel="noopener noreferrer"
+							<Link
+								to="/gallery"
 								className="inline-flex items-center gap-2 bg-navy text-white px-8 py-4 rounded-full font-semibold no-underline
                 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl"
 							>
-								Reserve Your Seat
-							</a>
-							<Link
-								to="/sponsorship"
-								className="inline-flex items-center gap-2 bg-white border-2 border-navy text-navy px-8 py-4 rounded-full font-semibold no-underline
-	hover:-translate-y-1 transition-all duration-300 ml-4"
-							>
-								Become a Sponsor
+								View Photo Gallery
+								<ImageIcon size={18} />
 							</Link>
 						</div>
 					</div>
@@ -190,19 +201,19 @@ export default function EventsPage() {
 			</div>
 
 			{/* Fundraising */}
-			<div className="py-20 bg-white">
+			<div className="py-14 bg-white">
 				<div className="max-w-[1400px] mx-auto px-[5%]">
-					<div className="text-center mb-14">
+					<div className="text-center mb-10">
 						<h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-4">
 							Fundraising
 						</h2>
 					</div>
 
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-						<div className="rounded-2xl overflow-hidden shadow-md">
+						<div className="rounded-2xl overflow-hidden shadow-md aspect-4/3">
 							<img
-								src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=1200&auto=format&fit=crop"
-								alt="Conference"
+								src={workshopPhoto}
+								alt="Students at an NFA neuroanatomy workshop"
 								className="w-full h-full object-cover"
 							/>
 						</div>
