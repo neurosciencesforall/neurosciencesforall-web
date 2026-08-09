@@ -7,11 +7,6 @@ const TIERS = [
 		title: "The Visionary",
 		price: "$5,000",
 		purpose: "Funds the purchase of vital diagnostic equipment",
-		benefits: [
-			"Prominent logo placement on the website & event signage",
-			"Special verbal recognition during the evening program",
-			"Reserved VIP seating and dinner for 8 guests",
-		],
 		featured: true,
 	},
 	{
@@ -19,32 +14,18 @@ const TIERS = [
 		title: "The Champion",
 		price: "$2,500",
 		purpose: "Supports comprehensive hands-on clinical training for local providers",
-		benefits: [
-			"Logo placement on the website and welcome signage",
-			"Acknowledgment in the printed evening program",
-			"Reserved seating and dinner for 4 guests",
-		],
 	},
 	{
 		name: "Bronze Sponsor",
 		title: "The Advocate",
 		price: "$1,500",
 		purpose: "Covers partial travel and logistics for one medical educator",
-		benefits: [
-			"Dedicated display space during the welcome cocktail hour",
-			"Logo listed on the organization website",
-			"Dinner and admission for 2 guests",
-		],
 	},
 	{
 		name: "Community Supporter",
 		title: null,
 		price: "$500",
 		purpose: "Every gift moves the mission forward",
-		benefits: [
-			"Name listed in the evening program and on the website",
-			"Dinner and admission for 2 guests",
-		],
 	},
 ];
 
@@ -91,14 +72,14 @@ export default function SponsorshipPage() {
 		"w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-800 outline-none focus:border-teal transition-colors duration-200 text-base";
 
 	return (
-		<main className="pt-[126px]">
+		<main className="pt-[90px]">
 			<div className="py-20 bg-white">
 				<div className="max-w-[1400px] mx-auto px-[5%]">
 
 					{/* Header */}
 					<div className="text-center mb-14">
 						<p className="text-gold text-[11px] font-semibold tracking-[0.2em] uppercase mb-3">
-							An Evening of Impact
+							Partner With Us
 						</p>
 						<h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-4">
 							Sponsorship Opportunities
@@ -109,7 +90,7 @@ export default function SponsorshipPage() {
 					</div>
 
 					{/* Tier cards */}
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+					<div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20 max-w-3xl mx-auto">
 						{TIERS.map((tier) => (
 							<div
 								key={tier.name}
@@ -123,12 +104,12 @@ export default function SponsorshipPage() {
 								{tier.featured && (
 									<div className="h-1 w-full bg-gradient-to-r from-[#1E3A8A] via-[#0891B2] to-[#C8930A]" />
 								)}
-								<div className="p-6 flex flex-col flex-1">
+								<div className="p-5 flex flex-col flex-1 text-center">
 									<p
 										className={
 											tier.featured
-												? "text-[#C8930A] text-[11px] font-semibold tracking-widest uppercase mb-1"
-												: "text-gray-400 text-[11px] font-semibold tracking-widest uppercase mb-1"
+												? "text-[#C8930A] text-[10px] font-semibold tracking-widest uppercase mb-1"
+												: "text-gray-400 text-[10px] font-semibold tracking-widest uppercase mb-1"
 										}
 									>
 										{tier.name}
@@ -137,8 +118,8 @@ export default function SponsorshipPage() {
 										<h3
 											className={
 												tier.featured
-													? "font-heading text-white text-lg font-bold mb-1"
-													: "font-heading text-navy text-lg font-bold mb-1"
+													? "font-heading text-white text-base font-bold mb-1"
+													: "font-heading text-navy text-base font-bold mb-1"
 											}
 										>
 											{tier.title}
@@ -147,8 +128,8 @@ export default function SponsorshipPage() {
 									<p
 										className={
 											tier.featured
-												? "text-white text-2xl font-bold mb-2"
-												: "text-navy text-2xl font-bold mb-2"
+												? "text-white text-xl font-bold mb-2"
+												: "text-navy text-xl font-bold mb-2"
 										}
 									>
 										{tier.price}
@@ -156,32 +137,21 @@ export default function SponsorshipPage() {
 									<p
 										className={
 											tier.featured
-												? "text-white/60 text-sm mb-4"
-												: "text-gray-500 text-sm mb-4"
+												? "text-white/60 text-xs mb-4 flex-1"
+												: "text-gray-500 text-xs mb-4 flex-1"
 										}
 									>
 										{tier.purpose}
 									</p>
-									<ul
-										className={
-											tier.featured
-												? "text-white/80 text-sm space-y-2 mb-6 flex-1 list-disc pl-4"
-												: "text-gray-500 text-sm space-y-2 mb-6 flex-1 list-disc pl-4"
-										}
-									>
-										{tier.benefits.map((b) => (
-											<li key={b}>{b}</li>
-										))}
-									</ul>
 									<button
 										onClick={() => selectTier(tier.name)}
 										className={
 											tier.featured
-												? "bg-[#C8930A] text-white text-sm font-semibold rounded-full py-2.5 hover:bg-[#b3830a] transition-colors duration-200"
-												: "bg-navy text-white text-sm font-semibold rounded-full py-2.5 hover:bg-teal transition-colors duration-200"
+												? "bg-[#C8930A] text-white text-xs font-semibold rounded-full py-2 hover:bg-[#b3830a] transition-colors duration-200"
+												: "bg-navy text-white text-xs font-semibold rounded-full py-2 hover:bg-teal transition-colors duration-200"
 										}
 									>
-										Become a Sponsor
+										Sponsor
 									</button>
 								</div>
 							</div>
