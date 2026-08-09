@@ -25,7 +25,7 @@ const categories = [
 
 export default function ResourcesPage() {
 	return (
-		<main className="pt-[90px]">
+		<main className="pt-[126px]">
 			<div className="py-20 bg-white">
 				<div className="max-w-[1400px] mx-auto px-[5%]">
 					{/* Header */}

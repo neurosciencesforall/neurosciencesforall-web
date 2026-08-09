@@ -12,7 +12,7 @@ export default function LectureCategoryPage() {
 
 	if (!meta) {
 		return (
-			<main className="pt-[90px]">
+			<main className="pt-[126px]">
 				<div className="max-w-[1400px] mx-auto px-[5%] py-20 text-center">
 					<h2 className="font-heading text-navy text-2xl font-bold mb-4">
 						Category not found
@@ -26,7 +26,7 @@ export default function LectureCategoryPage() {
 	}
 
 	return (
-		<main className="pt-[90px]">
+		<main className="pt-[126px]">
 			<div className="py-20 bg-white">
 				<div className="max-w-[1400px] mx-auto px-[5%]">
 

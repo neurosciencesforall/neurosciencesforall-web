@@ -45,6 +45,15 @@ export default function Navbar() {
 				scrolled ? "shadow-lg" : "shadow-sm"
 			}`}
 		>
+			{/* Nonprofit status banner — persistent, sits above the nav row */}
+			<div className="bg-navy text-white text-center py-1.5 px-4">
+				<p className="text-xs md:text-sm font-medium m-0 tracking-wide">
+					NeuroSciences For All is a registered{" "}
+					<span className="text-gold font-semibold">501(c)(3) nonprofit</span>{" "}
+					organization — donations are tax-deductible.
+				</p>
+			</div>
+
 			<nav className="flex justify-between items-center px-[5%] py-2 max-w-[1400px] mx-auto">
 				{/* Logo */}
 				<Link

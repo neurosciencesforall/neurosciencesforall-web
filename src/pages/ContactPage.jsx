@@ -44,7 +44,7 @@ export default function ContactPage() {
 		"w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-800 outline-none focus:border-teal transition-colors duration-200 text-base";
 
 	return (
-		<main className="pt-[90px]">
+		<main className="pt-[126px]">
 			<div className="py-20 bg-white">
 				<div className="max-w-[1400px] mx-auto px-[5%]">
 					{/* Header */}

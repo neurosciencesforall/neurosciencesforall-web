@@ -4,10 +4,13 @@ import { X, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 const AUTO_PLAY_INTERVAL_MS = 3500;
 
 // Auto-loads every image dropped into src/assets/gallery — no manual imports needed.
-const modules = import.meta.glob("../assets/gallery/*.{jpg,jpeg,JPG,JPEG,png,PNG}", {
-	eager: true,
-	import: "default",
-});
+const modules = import.meta.glob(
+	"../assets/gallery/*.{jpg,jpeg,JPG,JPEG,png,PNG}",
+	{
+		eager: true,
+		import: "default",
+	},
+);
 const galleryImages = Object.values(modules);
 
 export default function GalleryPage() {
@@ -62,7 +65,7 @@ export default function GalleryPage() {
 	}, [activeIndex, isPlaying, showNext]);
 
 	return (
-		<main className="pt-[90px] min-h-screen bg-white">
+		<main className="pt-[126px] min-h-screen bg-white">
 			<div className="max-w-[1400px] mx-auto px-[5%] py-16">
 				<div className="text-center mb-12">
 					<h1 className="font-heading text-navy text-4xl md:text-5xl font-bold mb-4">

@@ -254,7 +254,7 @@ export default function AboutPage() {
 	const [selectedPerson, setSelectedPerson] = useState(null);
 
 	return (
-		<main className="pt-[90px]">
+		<main className="pt-[126px]">
 			{/* Single modal — only one can be open at a time */}
 			{selectedPerson && (
 				<BioModal

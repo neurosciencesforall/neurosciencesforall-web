@@ -32,7 +32,7 @@ export default function EventsPage() {
 	];
 
 	return (
-		<main className="pt-[90px]">
+		<main className="pt-[126px]">
 			{/* Upcoming Fundraiser — Spotlight */}
 			<div className="py-20 bg-[#F0F9FF]">
 				<div className="max-w-[1400px] mx-auto px-[5%]">

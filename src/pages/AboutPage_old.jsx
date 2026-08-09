@@ -3,7 +3,7 @@ import { Mail, Users, Lightbulb } from "lucide-react";
 
 export default function AboutPage() {
   return (
-    <main className="pt-[90px]">
+    <main className="pt-[126px]">
 
       {/* Vision */}
       <div className="py-20 bg-white">

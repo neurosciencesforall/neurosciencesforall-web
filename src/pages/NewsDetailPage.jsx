@@ -8,7 +8,7 @@ export default function NewsDetailPage() {
 
 	if (!item) {
 		return (
-			<main className="pt-[90px]">
+			<main className="pt-[126px]">
 				<div className="max-w-[800px] mx-auto px-[5%] py-20 text-center">
 					<h2 className="font-heading text-navy text-2xl font-bold mb-4">
 						Article not found
@@ -28,7 +28,7 @@ export default function NewsDetailPage() {
 	});
 
 	return (
-		<main className="pt-[90px]">
+		<main className="pt-[126px]">
 			<div className="py-20 bg-white">
 				<div className="max-w-[800px] mx-auto px-[5%]">
 					<Link

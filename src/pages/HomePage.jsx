@@ -43,7 +43,7 @@ export default function HomePage() {
 	};
 
 	return (
-		<main className="pt-[90px]">
+		<main className="pt-[126px]">
 			{/* Hero */}
 			<div className="relative min-h-[65vh] flex items-center justify-center text-center overflow-hidden">
 				<img

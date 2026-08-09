@@ -125,7 +125,7 @@ export default function DonatePage() {
 	];
 
 	return (
-		<main className="pt-[90px]">
+		<main className="pt-[126px]">
 			{/* Hero */}
 			<div className="py-20 bg-gradient-to-br from-navy to-teal text-white text-center px-[5%]">
 				<h2 className="font-heading text-3xl md:text-5xl font-bold mb-6">
