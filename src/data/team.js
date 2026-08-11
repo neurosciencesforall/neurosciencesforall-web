@@ -1,7 +1,7 @@
 import somaImg from "../assets/team/soma-sahai-srivastava.jpeg";
 import leighImg from "../assets/team/leigh-ramos-platt.jpeg";
 import jenniferImg from "../assets/team/jennifer_hui.jpeg";
-import belindaImg from "../assets/team/belinda_f.jpeg";
+import belindaImg from "../assets/team/belinda_f.jpg";
 import fernandoImg from "../assets/team/fernando_ibanhes.jpg";
 import yaesshnaImg from "../assets/team/yaesshna_pillay.jpg"
 import shobhnaImg from "../assets/team/shobhna_professional_pic.jpg";
@@ -31,13 +31,13 @@ export const team = [
     tier: "leadership",
     // linkedin: "",
   },
-
+  
   {
     name: "Leigh M. Ramos-Platt, MD",
     role: "President",
     // NOTE: Bio sourced from public USC/CHLA profile — confirm with Dr. Ramos-Platt
-    shortBio: "Clinical Professor of Neurology and Pediatrics at Keck School of Medicine, USC, and Medical Director of the Muscular Dystrophy Association Neuromuscular Clinic at Children's Hospital Los Angeles.",
-    fullBio: "Dr. Leigh Maria Ramos-Platt is a Clinical Professor of Neurology and Pediatrics at the Keck School of Medicine, University of Southern California, and Medical Director of the Muscular Dystrophy Association Neuromuscular Clinic at Children's Hospital Los Angeles. Board certified in Neurology with Special Qualification in Child Neurology and Clinical Neurophysiology, she is a leading expert in pediatric neuromuscular diseases, including Duchenne Muscular Dystrophy and Spinal Muscular Atrophy. Dr. Ramos-Platt is widely recognized for her work in advancing gene therapy access and ensuring that families from all backgrounds can benefit from life-changing treatments. She is an active advocate for health equity in pediatric neurological care.",
+    shortBio: "Vice Chair of Pediatrics at St. Luke's University Health Network in Bethlehem, Pennsylvania, and a practicing neurologist.",
+    fullBio: "Dr. Leigh Maria Ramos-Platt is the Vice Chair of Pediatrics at St. Luke's University Health Network in Bethlehem, Pennsylvania, where she continues to practice as a neurologist. Board certified in Neurology with Special Qualification in Child Neurology and Clinical Neurophysiology, she is a leading expert in pediatric neuromuscular diseases, including Duchenne Muscular Dystrophy and Spinal Muscular Atrophy. Dr. Ramos-Platt is widely recognized for her work in advancing gene therapy access and ensuring that families from all backgrounds can benefit from life-changing treatments. She is an active advocate for health equity in pediatric neurological care.",
     image: leighImg,
     tier: "leadership",
     // linkedin: "",
@@ -67,11 +67,9 @@ export const team = [
 
   {
     name: "Yaesshna Pillay, MD",
-    role: "Neurologist & Clinical Neurophysiology Fellow",
-    // NOTE: Bio sourced from Doximity public profile — confirm with Dr. Pillay
-    // NOTE: Foundation role/title to be confirmed
-    shortBio: "Neurologist and Clinical Neurophysiology Fellow at USC/LA General Medical Center, with training from the University of Texas and University College Dublin.",
-    fullBio: "Dr. Yaesshna Pillay is a Neurologist and Clinical Neurophysiology Fellow at the University of Southern California and Los Angeles General Medical Center. She completed her Neurology residency at the University of Texas Health Science Center San Antonio and her medical degree at University College Dublin. Her clinical focus is in neurophysiology, including the diagnosis and assessment of neurological conditions through electrodiagnostic studies.",
+    role: "EMG Trainer",
+    shortBio: "Clinical Assistant Professor of Neurology at Keck Medicine of USC, honored for her work teaching in Cambodia.",
+    fullBio: "Dr. Yaesshna Pillay is a Clinical Assistant Professor of Neurology at Keck Medicine of USC whose passion for advocacy drives her work in global health equity. She completed her fellowship in neurophysiology at USC/Los Angeles General, her neurology residency at the University of Texas, and her master's in medical ethics & law from King's College London. Her work teaching in Cambodia was recognized with the American Neuromuscular Foundation's President's Research Initiative Award. She is committed to empowering physicians in underserved communities to provide the best possible care for their patients.",
     image: yaesshnaImg,
     tier: "team",
     // linkedin: "",
