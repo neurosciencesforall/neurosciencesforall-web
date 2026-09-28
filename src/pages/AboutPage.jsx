@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Users, Lightbulb, X } from "lucide-react";
+import { Mail, Users, Lightbulb, X, ArrowDown } from "lucide-react";
 import { team } from "../data/team";
+import { publications } from "../data/publications";
 import aboutTeamImg from "../assets/about-team-cambodia.jpg";
 
 // ── Bio Modal ─────────────────────────────────────────────
@@ -253,6 +254,15 @@ export default function AboutPage() {
 	const [featured, ...rest] = leadership;
 	const [selectedPerson, setSelectedPerson] = useState(null);
 
+	const publicationsByYear = publications
+		.reduce((groups, pub) => {
+			const group = groups.find((g) => g.year === pub.year);
+			if (group) group.items.push(pub);
+			else groups.push({ year: pub.year, items: [pub] });
+			return groups;
+		}, [])
+		.sort((a, b) => b.year - a.year);
+
 	return (
 		<main className="pt-[90px]">
 			{/* Single modal — only one can be open at a time */}
@@ -270,10 +280,18 @@ export default function AboutPage() {
 						<h2 className="font-heading text-[#1E3A8A] text-3xl md:text-5xl font-bold mb-4">
 							About NeuroSciences For All
 						</h2>
-						<p className="text-gray-500 text-lg">
+						<p className="text-gray-500 text-lg mb-5">
 							Dedicated to advancing neuroscience through innovative educational
 							tools
 						</p>
+						<a
+							href="#publications"
+							className="inline-flex items-center gap-1.5 text-teal text-sm font-semibold
+                       no-underline hover:text-[#0891B2] transition-colors duration-200"
+						>
+							See our publications &amp; presentations
+							<ArrowDown size={15} />
+						</a>
 					</div>
 
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -450,6 +468,57 @@ export default function AboutPage() {
 									</div>
 								</div>
 							))}
+					</div>
+				</div>
+			</div>
+
+			{/* Publications & Presentations */}
+			<div id="publications" className="pt-4 pb-24 bg-[#F0F9FF] scroll-mt-[126px]">
+				<div className="max-w-[1400px] mx-auto px-[5%]">
+					<div className="text-center mb-14">
+						<p className="text-gold text-[11px] font-semibold tracking-[0.2em] uppercase mb-3">
+							Our Impact
+						</p>
+						<h2 className="font-heading text-navy text-3xl md:text-5xl font-bold mb-4">
+							Publications &amp; Presentations
+						</h2>
+						<p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
+							Peer-reviewed and conference work documenting our Cambodia global
+							health program.
+						</p>
+					</div>
+
+					<div className="max-w-3xl mx-auto flex flex-col gap-10">
+						{publicationsByYear.map(({ year, items }) => (
+							<div key={year}>
+								<p className="text-teal text-sm font-bold tracking-widest uppercase mb-4">
+									{year}
+								</p>
+								<div className="flex flex-col gap-4">
+									{items.map((pub, i) => (
+										<div
+											key={i}
+											className="bg-white rounded-xl border border-gray-100 pl-5 pr-6 py-4
+                                 shadow-sm hover:shadow-md transition-shadow duration-300
+                                 border-l-4 border-l-gold"
+										>
+											<p className="text-navy text-[0.95rem] leading-relaxed mb-1.5">
+												{pub.citation}
+											</p>
+											<p className="text-gray-400 text-sm">{pub.venue}</p>
+											{pub.highlight && (
+												<span
+													className="inline-block mt-2 bg-gold/10 text-[#8a6607] text-[11px]
+                                     font-semibold tracking-wide uppercase px-3 py-1 rounded-full"
+												>
+													{pub.highlight}
+												</span>
+											)}
+										</div>
+									))}
+								</div>
+							</div>
+						))}
 					</div>
 				</div>
 			</div>

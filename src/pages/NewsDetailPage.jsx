@@ -21,7 +21,8 @@ export default function NewsDetailPage() {
 		);
 	}
 
-	const formattedDate = new Date(item.date).toLocaleDateString("en-US", {
+	const [y, m, d] = item.date.split("-").map(Number);
+	const formattedDate = new Date(y, m - 1, d).toLocaleDateString("en-US", {
 		month: "long",
 		day: "numeric",
 		year: "numeric",

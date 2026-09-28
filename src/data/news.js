@@ -3,8 +3,28 @@
 // body is an array of paragraphs, rendered one per <p>.
 
 import uscSeminarImg from "../assets/news/news-usc-seminar.jpg";
+import bakeSaleImg from "../assets/news/bake-sale-handoff.jpg";
+import bakeSaleGroupImg from "../assets/news/bake-sale-group.jpeg";
+import bakeSaleTableImg from "../assets/news/bake-sale-table.jpg";
+import bakeSaleDianaImg from "../assets/news/bake-sale-diana.jpg";
 
 export const news = [
+    {
+      slug: "neurology-clinic-bake-sale",
+      date: "2026-08-28",
+      dateline: "LOS ANGELES, CA",
+      image: bakeSaleImg,
+      headline: "Baking a Difference: How Our Community Powers Our Mission",
+      excerpt:
+        "Staff at the Neurology clinic turned a bake sale into a fundraiser for NeuroSciences For All, raising $165 for our Cambodia education program.",
+      gallery: [bakeSaleTableImg, bakeSaleGroupImg, bakeSaleDianaImg, bakeSaleImg],
+      body: [
+        "It doesn't take a gala to make an impact. This week, staff at the Neurology clinic turned a lunchroom table into a fundraiser for NeuroSciences For All — trays of cookies, pineapple upside-down cakes, and homemade treats, all for sale, with every dollar going straight to our Cambodia education program.",
+        "The bake sale was organized by Diana Baez, CMA, Clinical Coordinator and EMG tech, who spent her own time baking and rallying coworkers to pitch in. What started as a small table of desserts turned into a full team effort, with colleagues across the clinic stopping by to buy a treat and support the cause.",
+        "By the end of the day, the team had raised $165 — handed over on the spot to NFA Founder & CEO Dr. Soma Sahai-Srivastava. It's a small gesture with an outsized meaning: proof that our mission doesn't rest only on major donors and formal events, but on everyday people who care enough to bake, organize, and show up.",
+        "Thank you, Diana — and everyone at the Neurology clinic who made this happen.",
+      ],
+    },
     {
       slug: "usc-global-medicine-seminar",
       date: "2026-04-18",

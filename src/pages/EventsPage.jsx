@@ -1,4 +1,5 @@
-import { MapPin, Clock, Image as ImageIcon } from "lucide-react";
+import { useState } from "react";
+import { MapPin, Clock, Image as ImageIcon, X, Images } from "lucide-react";
 import { Link } from "react-router-dom";
 import { news } from "../data/news";
 import eventPhoto1 from "../assets/events/evening-of-impact-1.jpg";
@@ -7,7 +8,85 @@ import eventPhoto3 from "../assets/events/evening-of-impact-3.jpg";
 import eventPhoto4 from "../assets/events/evening-of-impact-4.jpeg";
 import workshopPhoto from "../assets/gallery/IMG_5565.jpeg";
 
+// ── Small angled photo stack for news cards with a gallery — click to expand ──
+const STACK_TRANSFORMS = [
+	"rotate(-7deg) translate(-4px, 3px)",
+	"rotate(4deg) translate(5px, -4px)",
+	"rotate(-2deg) translate(6px, 5px)",
+	"rotate(7deg) translate(-6px, -3px)",
+];
+
+function PhotoStackMini({ images, onOpen }) {
+	return (
+		<div
+			className="relative w-20 h-16 sm:w-24 sm:h-20 shrink-0 cursor-pointer group"
+			onClick={(e) => {
+				e.preventDefault();
+				e.stopPropagation();
+				onOpen();
+			}}
+		>
+			{images.map((img, i) => (
+				<img
+					key={i}
+					src={img}
+					alt=""
+					style={{
+						transform: STACK_TRANSFORMS[i % STACK_TRANSFORMS.length],
+						zIndex: i,
+					}}
+					className="absolute inset-0 w-full h-full object-cover rounded-lg
+                     border-2 border-white shadow-md transition-transform duration-300
+                     group-hover:scale-105"
+				/>
+			))}
+			<div
+				className="absolute -bottom-1.5 -right-1.5 z-20 flex items-center gap-1
+                   bg-navy text-white text-[10px] font-semibold px-1.5 py-0.5 rounded-full shadow"
+			>
+				<Images size={10} />
+				{images.length}
+			</div>
+		</div>
+	);
+}
+
+function GalleryModal({ images, onClose }) {
+	return (
+		<div
+			className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4 sm:px-6"
+			onClick={(e) => e.target === e.currentTarget && onClose()}
+		>
+			<div className="bg-white w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl max-h-[85vh] flex flex-col">
+				<div className="h-1 w-full bg-gradient-to-r from-[#1E3A8A] via-[#0891B2] to-[#F59E0B] shrink-0" />
+				<div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 shrink-0">
+					<p className="font-heading text-navy font-bold">Photos from the day</p>
+					<button
+						onClick={onClose}
+						className="text-gray-300 hover:text-gray-600 transition-colors
+                       bg-transparent border-none cursor-pointer p-2 rounded-full hover:bg-gray-100"
+					>
+						<X size={18} />
+					</button>
+				</div>
+				<div className="overflow-y-auto p-6 grid grid-cols-2 gap-4">
+					{images.map((img, i) => (
+						<img
+							key={i}
+							src={img}
+							alt=""
+							className="w-full h-48 object-contain rounded-xl shadow-sm"
+						/>
+					))}
+				</div>
+			</div>
+		</div>
+	);
+}
+
 export default function EventsPage() {
+	const [openGallery, setOpenGallery] = useState(null);
+
 	const events = [
 		{
 			date: "NOV 30 – DEC 4, 2026",
@@ -120,34 +199,52 @@ export default function EventsPage() {
 						</div>
 					) : (
 						<div className="flex flex-col gap-6 max-w-3xl mx-auto">
-							{news.map(({ slug, date, headline, excerpt }) => (
-								<Link
-									key={slug}
-									to={`/news/${slug}`}
-									className="border border-gray-100 rounded-2xl p-6 no-underline hover:shadow-md transition-shadow duration-300 bg-white block"
-								>
-									<p className="text-gray-400 text-xs uppercase tracking-widest mb-2">
-										{new Date(date).toLocaleDateString("en-US", {
-											month: "long",
-											day: "numeric",
-											year: "numeric",
-										})}
-									</p>
-									<h3 className="font-heading text-navy text-lg font-bold mb-2 leading-snug">
-										{headline}
-									</h3>
-									<p className="text-gray-500 text-sm leading-relaxed mb-3">
-										{excerpt}
-									</p>
-									<span className="text-teal font-semibold text-sm">
-										Read more →
-									</span>
-								</Link>
-							))}
+							{news.map(({ slug, date, headline, excerpt, gallery }) => {
+								const [y, m, d] = date.split("-").map(Number);
+								const formattedDate = new Date(y, m - 1, d).toLocaleDateString(
+									"en-US",
+									{ month: "long", day: "numeric", year: "numeric" },
+								);
+								return (
+									<Link
+										key={slug}
+										to={`/news/${slug}`}
+										className="border border-gray-100 rounded-2xl p-6 no-underline hover:shadow-md transition-shadow duration-300 bg-white flex items-center gap-5"
+									>
+										<div className="flex-1 min-w-0">
+											<p className="text-gray-400 text-xs uppercase tracking-widest mb-2">
+												{formattedDate}
+											</p>
+											<h3 className="font-heading text-navy text-lg font-bold mb-2 leading-snug">
+												{headline}
+											</h3>
+											<p className="text-gray-500 text-sm leading-relaxed mb-3">
+												{excerpt}
+											</p>
+											<span className="text-teal font-semibold text-sm">
+												Read more →
+											</span>
+										</div>
+										{gallery && (
+											<PhotoStackMini
+												images={gallery}
+												onOpen={() => setOpenGallery(gallery)}
+											/>
+										)}
+									</Link>
+								);
+							})}
 						</div>
 					)}
 				</div>
 			</div>
+
+			{openGallery && (
+				<GalleryModal
+					images={openGallery}
+					onClose={() => setOpenGallery(null)}
+				/>
+			)}
 
 			{/* Upcoming Events */}
 			<div className="py-20 bg-[#F0F9FF]">

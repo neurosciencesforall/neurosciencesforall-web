@@ -9,6 +9,7 @@ import {
 	MapPin,
 	ChevronDown,
     Image as ImageIcon,
+    FileText,
 } from "lucide-react";
 import { useState } from "react";
 import PhotoCarousel from "../components/PhotoCarousel";
@@ -253,6 +254,41 @@ export default function HomePage() {
 						</p>
 					</div>
 					<PhotoCarousel />
+				</div>
+			</div>
+
+			{/* Publications teaser */}
+			<div className="py-8 bg-white">
+				<div className="max-w-[1400px] mx-auto px-[5%] flex justify-center">
+					<div className="bg-[#0f2158] rounded-2xl shadow-xl hover:shadow-2xl overflow-hidden max-w-3xl w-full transition-all duration-300">
+						<div className="h-1 w-full bg-gradient-to-r from-[#1E3A8A] via-[#0891B2] to-[#C8930A]" />
+						<div className="px-8 py-8 sm:px-10 sm:py-10 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+							<div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-navy to-teal flex items-center justify-center shrink-0">
+								<FileText size={26} className="text-white" />
+							</div>
+							<div className="flex-1">
+								<p className="text-[#F59E0B] text-[11px] font-semibold tracking-[0.2em] uppercase mb-2">
+									Our Impact
+								</p>
+								<h3 className="font-heading text-white text-xl md:text-2xl font-bold mb-2">
+									Peer-Reviewed Research &amp; Presentations
+								</h3>
+								<p className="text-white/65 text-sm leading-relaxed">
+									Our Cambodia program has been presented at ANA, AES, and
+									AANEM, and published in Neurology — including a President's
+									Medal at AANEM 2026.
+								</p>
+							</div>
+							<Link
+								to="/about#publications"
+								className="shrink-0 inline-flex items-center gap-2 bg-[#C8930A] text-white px-6 py-2.5
+                  rounded-full font-semibold no-underline text-sm whitespace-nowrap
+                  hover:bg-[#b3830a] transition-colors duration-200"
+							>
+								View Publications
+							</Link>
+						</div>
+					</div>
 				</div>
 			</div>
 
