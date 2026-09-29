@@ -52,42 +52,53 @@ export default function LectureCategoryPage() {
 							Lectures coming soon.
 						</div>
 					) : (
-						<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+						<div className="flex flex-col gap-4 max-w-4xl">
 							{items.map((item) => (
 								<div
 									key={item.youtubeId}
-									className="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow duration-300"
+									className="border border-gray-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow duration-300
+                             flex flex-col sm:flex-row"
 								>
-									{activeVideo === item.youtubeId ? (
-										<div className="aspect-video">
+									{/* Thumbnail / player — fixed-width on the left, matches YouTube's playlist list style */}
+									<div className="w-full sm:w-40 shrink-0 aspect-video bg-navy relative">
+										{activeVideo === item.youtubeId ? (
 											<iframe
-												src={`https://www.youtube.com/embed/${item.youtubeId}`}
+												src={`https://www.youtube.com/embed/${item.youtubeId}?autoplay=1`}
 												title={item.title}
 												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 												allowFullScreen
 												className="w-full h-full"
 											/>
-										</div>
-									) : (
-										<button
-											onClick={() => setActiveVideo(item.youtubeId)}
-											className="relative w-full aspect-video bg-navy border-none cursor-pointer p-0 group"
-										>
-											<img
-												src={`https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`}
-												alt={item.title}
-												className="w-full h-full object-cover"
-											/>
-											<div className="absolute inset-0 bg-navy/20 group-hover:bg-navy/40 transition-colors duration-200 flex items-center justify-center">
-												<PlayCircle size={48} className="text-white drop-shadow-lg" />
-											</div>
-										</button>
-									)}
-									<div className="p-5">
-										<h3 className="font-heading text-navy text-lg font-bold mb-1">
+										) : (
+											<button
+												onClick={() => setActiveVideo(item.youtubeId)}
+												className="relative w-full h-full border-none cursor-pointer p-0 group"
+											>
+												<img
+													src={`https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`}
+													alt={item.title}
+													className="w-full h-full object-cover"
+												/>
+												<div className="absolute inset-0 bg-navy/20 group-hover:bg-navy/40 transition-colors duration-200 flex items-center justify-center">
+													<PlayCircle size={28} className="text-white drop-shadow-lg" />
+												</div>
+											</button>
+										)}
+									</div>
+
+									{/* Title + description — to the right, like YouTube's playlist rows */}
+									<div className="p-5 flex flex-col justify-center">
+										<h3 className="font-heading text-navy text-lg font-bold mb-1 leading-snug">
 											{item.title}
 										</h3>
-										<p className="text-gray-500 text-sm">{item.description}</p>
+										<p className="text-gray-500 text-sm leading-relaxed">
+											{item.description}
+										</p>
+										{item.credit && (
+											<p className="text-gray-400 text-xs mt-2 italic">
+												{item.credit}
+											</p>
+										)}
 									</div>
 								</div>
 							))}
