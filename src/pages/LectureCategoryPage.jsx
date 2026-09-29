@@ -71,9 +71,16 @@ export default function LectureCategoryPage() {
 									) : (
 										<button
 											onClick={() => setActiveVideo(item.youtubeId)}
-											className="w-full aspect-video bg-navy flex items-center justify-center text-white border-none cursor-pointer"
+											className="relative w-full aspect-video bg-navy border-none cursor-pointer p-0 group"
 										>
-											<PlayCircle size={48} />
+											<img
+												src={`https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`}
+												alt={item.title}
+												className="w-full h-full object-cover"
+											/>
+											<div className="absolute inset-0 bg-navy/20 group-hover:bg-navy/40 transition-colors duration-200 flex items-center justify-center">
+												<PlayCircle size={48} className="text-white drop-shadow-lg" />
+											</div>
 										</button>
 									)}
 									<div className="p-5">
