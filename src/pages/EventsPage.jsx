@@ -60,7 +60,9 @@ function GalleryModal({ images, onClose }) {
 			<div className="bg-white w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl max-h-[85vh] flex flex-col">
 				<div className="h-1 w-full bg-gradient-to-r from-[#1E3A8A] via-[#0891B2] to-[#F59E0B] shrink-0" />
 				<div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 shrink-0">
-					<p className="font-heading text-navy font-bold">Photos from the day</p>
+					<p className="font-heading text-navy font-bold">
+						Photos from the day
+					</p>
 					<button
 						onClick={onClose}
 						className="text-gray-300 hover:text-gray-600 transition-colors
@@ -100,7 +102,7 @@ export default function EventsPage() {
 			title: "EMG Bootcamp",
 			desc: "Join the EMG bootcamp training.",
 			location: "Phnom Penh, Cambodia",
-			time: "8:00 AM – 5:00 PM",
+			time: "1:00 PM – 5:00 PM",
 		},
 		{
 			date: "NOV 30 – DEC 4, 2026",
@@ -157,8 +159,7 @@ export default function EventsPage() {
 								</span>
 								<span className="flex items-center gap-2 text-gray-500 text-sm">
 									<MapPin size={18} className="text-teal" />
-									Lost Parrot Cafe, 1929 Huntington Dr, South Pasadena, CA
-									91030
+									Lost Parrot Cafe, 1929 Huntington Dr, South Pasadena, CA 91030
 								</span>
 							</div>
 							<p className="text-gray-500 leading-relaxed mb-8 text-xl">
